@@ -1,0 +1,35 @@
+header {
+    text-align: center;
+}
+
+figcaption.logo {
+    color:darkcyan;
+    background-color: rgba(247, 216, 121, 0.556);
+}
+
+h1.title {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p.title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    text-align: center;
+}
+
+h4 {
+    color:red;
+
+}
+
+#Ingredients {
+    text-align: left;
+}
+
+#Method {
+    text-align: left;
+}
