@@ -1,10 +1,12 @@
-header {
+#header {
     text-align: center;
 }
 
-figcaption.logo {
+#caption {
     color:darkcyan;
-    background-color: rgba(247, 216, 121, 0.556);
+    background-color: rgba(245, 229, 181, 0.556);
+    border-top: 3px solid yellow;
+    padding: 12px;
 }
 
 h1.title {
@@ -18,7 +20,8 @@ p.title {
 }
 
 main {
-    text-align: center;
+    margin: 0 auto;
+    padding: 160px;
 }
 
 h4 {
@@ -26,10 +29,14 @@ h4 {
 
 }
 
-#Ingredients {
+#Ingredients, #Method {
     text-align: left;
 }
 
-#Method {
-    text-align: left;
+h3, p {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+ul {
+    font-family: Arial, Helvetica, sans-serif;
 }
