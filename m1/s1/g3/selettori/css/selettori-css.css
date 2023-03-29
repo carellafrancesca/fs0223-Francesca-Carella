@@ -1,3 +1,8 @@
+/*tag=> peso 1
+ class=> peso 10
+ id=> peso 100
+ inline style=> peso 1000*/
+
 a { /*tutti gli elementi *a */
     color: black;
 }
@@ -12,4 +17,20 @@ a { /*tutti gli elementi *a */
 
 #colore-blu {
     color: blue;
+}
+
+/*selezione di figli*/
+
+.paragrafo-speciale b, 
+.paragrafo-speciale em{
+    color: blue;
+}
+
+
+.area-speciale > span{
+    font-weight: bold;
+}
+
+.area-speciale > ul > li > span{
+    font-weight: bold;
 }
