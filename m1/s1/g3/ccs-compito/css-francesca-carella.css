@@ -9,6 +9,11 @@
     padding: 12px;
 }
 
+main {
+    margin: 0 auto;
+    padding: 70px;
+}
+
 h1.title {
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -19,9 +24,14 @@ p.title {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-main {
-    margin: 0 auto;
-    padding: 160px;
+.focaccia {
+    display: block;
+    margin: 0% auto;
+}
+
+.featured {
+    border-left: 4px solid yellow;
+    padding: 3px;
 }
 
 h4 {
