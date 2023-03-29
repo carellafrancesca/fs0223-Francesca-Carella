@@ -1,0 +1,15 @@
+a { /*tutti gli elementi *a */
+    color: black;
+}
+
+.colore-rosso{ /*tutti gli elementi con la classe colore rosso*/
+    color: red;
+}
+
+.sfondo-verde{
+    background-color: green;
+}
+
+#colore-blu {
+    color: blue;
+}
