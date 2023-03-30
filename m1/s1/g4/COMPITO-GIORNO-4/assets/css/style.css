@@ -57,11 +57,14 @@ caption{
     text-align: center;
     font-size: medium;
     font-weight: bold;
+    font-style: italic;
 }
 
 table{ /*da rivedere*/
     text-align: center;
     border-bottom: 2px solid blue;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 th, td {
@@ -115,5 +118,4 @@ input{
 p.data{
     font-size:small;
     line-height: 15px;
-    text-align: right;
 }
