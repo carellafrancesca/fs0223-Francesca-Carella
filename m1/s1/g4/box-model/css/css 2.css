@@ -1,0 +1,45 @@
+.quadrato{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+#q2{
+    overflow: auto;
+}
+
+#q3{
+    background-color: red;
+    max-width: 600px;
+    height: 50px;
+}
+
+#q4{
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* applicarlo su tutta la pagina se si sformano i contenuti: si riduce lo spazio per il contenuto (vedere esempio)
+*{
+    box-sizing: border-box;
+}
+*/
+
+#q5{
+    padding: 15px;
+    border: 10px outset black;
+    background-color: gray;
+}
+
+#q5:active{
+    background-color: goldenrod;
+    border: 10px inset #999;
+}
+
+#q6{
+    border-radius: 100%;
+    border-top-right-radius: 60%;
+    border: 10px solid #000;
+    border-top: none;
+} /*per border-radius meglio usare le percentuali*/
+
