@@ -1,14 +1,14 @@
-/*{
+body{
     background: url(../img/sfondo.png) fixed;
-    font-family: 'Poppins', sans-serif;*/
+    font-family: 'Poppins', sans-serif;
+}
 
-
-header, footer, a.email{
+header, footer {
     text-align: center;
     color: white;
 }
 
-#inizio, footer {
+#introduzione, footer {
     padding: 20px;
     margin: 20px;
     background-color: darkcyan;
@@ -16,7 +16,48 @@ header, footer, a.email{
 
 main {
     padding: 70px;
-    margin: 0 auto ;
+    margin: 20px 40px;
+    background-color: white;
+    line-height: 1.5;
     text-align: center;
 }
 
+h1 {
+    font-size: large;
+    font-weight: bold;
+}
+
+.crediti{
+    font-size: small;
+    color: gray;
+}
+
+b.intro {
+    color: deeppink;
+}
+
+ul, ol {
+    text-align: left;
+}
+
+span.bordo {
+    padding: 4px;
+    margin: 2px 2px;
+    background-color:gainsboro;
+    border: 1px solid gray;
+    border-radius: 13px;
+}
+
+.title{
+    text-align: left;
+}
+
+caption{
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#tabella{
+
+}
