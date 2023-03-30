@@ -38,8 +38,20 @@
 
 #q6{
     border-radius: 100%;
-    border-top-right-radius: 60%;
+    border-top-right-radius: 60%; /*per border-radius meglio usare le percentuali*/
     border: 10px solid #000;
     border-top: none;
-} /*per border-radius meglio usare le percentuali*/
+    
+    margin-left: 100px;
+    margin-top: -100px;
 
+    /* margin e padding: 10px; su tutti i lati
+    margin: 0 50px; 0 => top, bottom / 50px left, right
+    margin: 0 50px 0 50px; top right bottom left */
+} 
+
+.full-page{
+    width: 100vw;
+    height: 100vh;
+    background-color: yellow;
+}
