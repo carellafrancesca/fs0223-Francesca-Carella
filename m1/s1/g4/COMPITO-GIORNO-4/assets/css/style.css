@@ -3,7 +3,7 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-header, footer {
+header, footer, .table-titles {
     text-align: center;
     color: white;
 }
@@ -22,7 +22,7 @@ main {
     text-align: center;
 }
 
-h1 {
+h1, h3{
     font-size: large;
     font-weight: bold;
 }
@@ -32,11 +32,11 @@ h1 {
     color: gray;
 }
 
-b.intro {
+b.intro, .email-footer {
     color: deeppink;
 }
 
-ul, ol {
+ul, ol{
     text-align: left;
 }
 
@@ -50,6 +50,7 @@ span.bordo {
 
 .title{
     text-align: left;
+    padding-bottom: 20px;
 }
 
 caption{
@@ -58,6 +59,61 @@ caption{
     font-weight: bold;
 }
 
-#tabella{
+table{ /*da rivedere*/
+    text-align: center;
+    border-bottom: 2px solid blue;
+}
 
+th, td {
+    padding: 7px 10px 10px 10px;
+}
+
+th {
+    letter-spacing: 0.1em;
+    font-size: 90%;
+    border: 3px solid blue;
+    background-color: blue;
+    text-align: center;
+}
+
+tr.colored{
+    background-color: silver;
+}
+
+.two{
+    padding-top: 30px;
+}
+
+#novità{
+    padding: 20px;
+    margin: 20px;
+    background-color:darkgrey;
+}
+
+button{
+    background-color:blue;
+    font-size: medium;
+    font-weight: bold;
+    color:white;
+}
+
+input{
+    border-bottom: 3px dotted black;
+}
+
+#correlati{
+    padding: 10px;
+    margin: 10px;
+    background-color: gainsboro;
+}
+
+.correlati{
+    text-align: left;
+    color: blue;
+}
+
+p.data{
+    font-size:small;
+    line-height: 15px;
+    text-align: right;
 }
