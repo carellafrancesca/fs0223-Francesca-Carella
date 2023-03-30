@@ -41,9 +41,7 @@
     border-top-right-radius: 60%; /*per border-radius meglio usare le percentuali*/
     border: 10px solid #000;
     border-top: none;
-    
     margin-left: 100px;
-    margin-top: -100px;
 
     /* margin e padding: 10px; su tutti i lati
     margin: 0 50px; 0 => top, bottom / 50px left, right
