@@ -1,0 +1,22 @@
+/*{
+    background: url(../img/sfondo.png) fixed;
+    font-family: 'Poppins', sans-serif;*/
+
+
+header, footer, a.email{
+    text-align: center;
+    color: white;
+}
+
+#inizio, footer {
+    padding: 20px;
+    margin: 20px;
+    background-color: darkcyan;
+}
+
+main {
+    padding: 70px;
+    margin: 0 auto ;
+    text-align: center;
+}
+
