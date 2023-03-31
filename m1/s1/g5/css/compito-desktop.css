@@ -1,0 +1,93 @@
+body{
+    color: #393d41;
+    font-size: 1.1rem;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 2;
+}
+
+.titolo-uno{
+    color: #25a2c3;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.titolo-due{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h3{
+    color: #25a2c3;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+header{
+    background-color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+}
+
+#intro{
+    text-align: center;
+    background-image: url(../images/banner.jpg);
+    background-position: center;
+    padding: 100px;
+}
+
+button{
+    background-color: #f04c2f;
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    border: none;
+    width: 100px;
+    height: 35px;
+    border-radius: 6%;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.flex-container-right{
+    flex: 50%;
+    padding-top: 5%;
+}
+
+.flex-container-left{
+    flex: 50%;
+}
+
+.middle{
+    padding-left: 30%;
+}
+
+#testimonianze{
+    background-color: #e22d0e;
+    text-align: center;
+}
+
+q{
+    font-size: medium;
+    font-style: italic;
+    color: white;
+}
+
+.credit {
+    font-size: large;
+    color: white;
+}
+
+.role{
+    font-size: small;
+    color: white;
+}
