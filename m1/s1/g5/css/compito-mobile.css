@@ -1,0 +1,117 @@
+body{
+    color: #393d41;
+    font-size: 1.1rem;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.65;
+    text-align: center;
+}
+
+.titolo-uno{
+    color: #25a2c3;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.titolo-due{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+h3{
+    color: #25a2c3;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+header{
+    background-color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#intro{
+    background-image: url(../images/banner.jpg);
+    background-position: center;
+    padding: 80px;
+}
+
+button{
+    background-color: #f04c2f;
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    border: none;
+    width: 100px;
+    height: 35px;
+    border-radius: 6%;
+}
+
+#first{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.middle{
+    border-radius: 100%;
+}
+
+#testimonianze{
+    background-color: #e22d0e;
+}
+
+q{
+    font-size: medium;
+    font-style: italic;
+    color: white;
+}
+
+.credit {
+    font-size: large;
+    color: white;
+}
+
+.role{
+    font-size: small;
+    color: white;
+}
+
+#altro{ 
+    background-position: center;
+    padding: 45px;
+}
+
+.extra{
+    width: 100%;
+}
+
+.correlati{
+    border: 2px solid #dee1e3;
+    background-position: center;
+    margin: auto;
+    border-bottom-right-radius: 3%;
+    border-bottom-left-radius: 3%;
+}
+
+footer{
+    padding: 20px;
+    background-color: #25a2c3;
+    color: white;
+    line-height: 2;
+}
+
+.link{
+    color: #c8e7f0;
+}
+
+.year{ 
+    border-top: 2px solid white;
+    margin: 0%;
+    line-height: 60px;
+    font-size: medium;
+}
