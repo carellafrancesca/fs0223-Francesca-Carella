@@ -69,11 +69,13 @@ button{
 
 .middle{
     padding-left: 30%;
+    border-radius: ;
 }
 
 #testimonianze{
     background-color: #e22d0e;
     text-align: center;
+    padding: 5%;
 }
 
 q{
