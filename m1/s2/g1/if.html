@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var condizione = false;
+
+        if(condizione){
+            console.log("true");
+        }else{
+            console.log("false");
+        }
+
+        var n = 10;
+
+        if(n > 10){
+            console.log('superiore');
+        }else if(n == 10){
+            console.log('è uguale');
+        }else{
+            console.log('inferiore')
+        }
+
+
+        //Verifica età
+
+        var anni = prompt('Quanti anni hai?')
+        console.log(anni);
+        //prompt non più utilizzato
+
+        if(anni >= 18 && anni <=120){
+            document.write('Sei Maggiorenne')
+        }else if(anni > 120){
+            document.write('Sei antico')
+        }else{
+            document.write('Sei Minorenne')
+            location.href = 'https://www.peppapig.com/it-it';
+        }
+
+        // && = and || = or ! = not
+
+    </script>
+        
+
+
+</body>
