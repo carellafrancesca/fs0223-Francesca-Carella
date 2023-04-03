@@ -25,3 +25,11 @@ if ( n > 50){
 }else{
     console.log('è uguale')
 }
+
+var anni = prompt('A che età puoi votare?')
+console.log(anni);
+    if(anni > 18){
+        document.write('Puoi votare');
+    }else{
+        document.write('Non puoi votare')
+    }
