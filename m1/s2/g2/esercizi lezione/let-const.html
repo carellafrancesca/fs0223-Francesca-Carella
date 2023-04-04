@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //let
+
+        //var non è soggetta a blockscope
+        var a = 0;
+        {
+            console.log(a)//raggiungibile perché è una var ed è fuori dal blocco
+        }
+
+        {
+            var b = 0;
+        }
+        console.log(b);//raggiungibile perché è una var
+
+        //let è soggetto a blockscope
+        let c= 1;
+        {
+            console.log(c)//raggiungibile perché è esterna al blocco
+        }
+
+        {
+            let d = 2;//nasce e muore nel blocco
+        }
+        //console.log(d)//non visibile, perché nasce nel blocco precedente
+
+        let e;
+        {
+            e = 10;
+        }
+        console.log(e);
+
+
+        //casi particolari
+
+        //var e = 8; l'identificazione e è già in uso sotto forma di let
+        //console.log(f) = undefined
+        var f = 9
+        {
+            //console.log(f)//la var f creata fuori dal blocco viene eliminata e non posso accedere alla variabile f sottostante prima della sua inizializzazione
+            let f = 11;
+            console.log(f)
+        }
+
+
+        //const - si comporta come LET in caso di Blockscope
+
+        const NOME_UTENTE = 'Mario'; //se c'è qualcosa scritto in questo modo tendenzialmente è const. MAIUSCONO E _
+
+        //NOME_UTENTE = "Giacomo"; => ERRORE 
+
+        const OGGETTO = {
+            nome : 'Mario',
+            anni : 30
+        }
+
+        //Object.freeze(OGGETTO) SE SI VOLESSE BLOCCARE I RIASSEGNAMENTI ANCHE PER I VALORI DEGLI OGGETTI
+
+        OGGETTO.nome = 'Maria';//avviene il riassegnamento
+        console.log(OGGETTO);
+
+
+        //scope variabili nelle funzioni
+        
+        let p = 0;
+        function prova(){
+            console.log(p);//raggiunge la variabile p
+        }
+
+        prova();
+
+        function prova2(){
+            let y = 200; //qualsiasi tipo di variabile non è disponibile
+        }
+        console.log(y);//non raggiungibile
+        //non si può accedere ad una variabile presente all'interno di una funzione
+
+
+    </script>
+
+</body>
+</html>
