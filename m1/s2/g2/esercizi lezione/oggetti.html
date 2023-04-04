@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //obj come funzione descrittiva
+        let obj = {};
+
+        let pizza = { //contiene delle proprietà - tutti i tipi di dato e delle funzioni
+            gusto : 'Margherita',
+            prezzo : 5,
+            mostraPrezzo : function(){  //funzione dentro un oggetto: METODO
+                console.log(`La pizza ${this.gusto} costa ${this.prezzo} euro`); //this prezzo prende l'ultimo valore inserito, quindi il 4 sostituisce il 5
+              }             
+        };
+
+        //lettura di una proprietà
+        console.log(pizza.gusto);
+
+        //scrittura di una proprietà
+        pizza.prezzo = 4;
+
+        document.write(pizza.prezzo)//4 
+        
+        console.log(pizza);
+
+        //lancio di un metodo
+        pizza.mostraPrezzo();
+
+
+        //COME APPLICARLO SU HTML - ESEMPIO SENZA CONSIDERARE <SCRIPT>
+        <div id='test'></div>
+
+        let pizza = {
+            gusto : 'Margherita',
+            prezzo : 5,
+            mostraPrezzo : function(){  //funzione dentro un oggetto: METODO
+                let contenitore = document.getElementById('test')
+                contenitore.innerHTML = `La pizza ${this.gusto} costa ${this.prezzo} euro`; 
+            }             
+        }
+
+        
+    </script>
+
+
+</body>
+</html>
