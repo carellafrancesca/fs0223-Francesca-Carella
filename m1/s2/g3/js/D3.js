@@ -49,7 +49,7 @@ if(c === 8 || d === 8){
   Crea un algoritmo che determini l'ammontare totale che deve essere addebitato all'utente per il checkout.
 */
 
-let totalShoppingCart  = 50;
+let totalShoppingCart  = 50; 
 console.log(totalShoppingCart)
 if(totalShoppingCart > 50){
   console.log('Il totale del carrello supera 50')
@@ -64,12 +64,12 @@ console.log(totalShoppingCart)
   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando come prima se le spedizioni sono gratuite oppure no e e calcolando il totale.
 */
 
-console.log(totalShoppingCart)
+console.log(totalShoppingCart) 
 totalShoppingCart *=0.8;
 if(totalShoppingCart > 50){
-  console.log('Il totale del carrello supera 50')
+  console.log('Il totale del carrello supera 50 quindi la spedizione è gratuita')
 }else{
-  console.log('Il totale non supera 50')
+  console.log('Il totale non supera 50 quindi la spedizione è a pagamento')
   totalShoppingCart += 10;
 }
 console.log(totalShoppingCart)
@@ -89,7 +89,6 @@ console.log(totalShoppingCart)
 
 let comparazione = 50;
 console.log(typeof comparazione);
-console.log(!typeof comparazione);
 
 /* ESERCIZIO 9
   Crea un algoritmo per controllare se un numero fornito sia pari o dispari (suggerimento: cerca l'operatore modulo su un motore di ricerca)
@@ -151,16 +150,21 @@ delete me.lastName
   Lavorando sempre sull'oggetto precedentemente fornito, scrivi del codice per rimuovere l'ultimo elemento della proprietà "skills".
 */
 
-/*SCRIVI QUI LA TUA RISPOSTA */
+me.skills.pop();
+console.log(me);
 
 /* ESERCIZIO 14
   Scrivi del codice per creare un array inizialmente vuoto. Riempilo successivamente con i numeri da 1 a 10.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+let arrVuoto = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 
 /* ESERCIZIO 15
   Scrivi del codice per sostituire l'ultimo elemento dell'array, ovvero il valore 10, con il valore 100.
 */
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+arrVuoto.pop();
+console.log(arrVuoto);
+
+arrVuoto.push(100);
+console.log(arrVuoto);
