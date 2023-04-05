@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let obj = {};
+
+        { let pizza = {
+            gusto: 'Margherita', //proprietà
+            prezzo: 5, //proprietà
+            aggiunte :  { //oggetto : proprietà
+                doppiaMozzarella: 1,
+                basilico: 0.5
+            },
+            mostraPrezzo : function(){ //metodo : le proprietà che contengono una funzione
+            console.log(`Il prezzo della pizza ${this.gusto} è pari a ${this.prezzo}$`);
+            }   
+            }
+
+            //lettura
+            console.log(pizza.gusto);
+
+            //recupero il prezzo del basilico
+            console.log(pizza.aggiunte.basilico);
+
+            //scrittura
+            pizza.gusto = '4 Formaggi';
+            console.log(pizza.gusto);
+
+            //non posso scrivere tutto l'oggetto nel DOM
+            document.write(pizza);//[object Object]
+
+            //lancio di un metodo
+            pizza.mostraPrezzo(); //parentesi tonda per eseguire il "comando"
+        }
+        
+        {
+
+            //costruttore degli oggetti
+            function Pizza (_gusto, _prezzo){ //prima lettera maiuscola = oggetto
+                this.gusto = _gusto;
+                this.prezzo =  _prezzo;
+                this.mostraPrezzo = function(){ console.log(`Il prezzo della pizza ${this.gusto} è pari a ${this.prezzo}$`);
+                }     
+            }
+
+            let margherita = new Pizza('Margherita', 5); //la funzione diventa oggetto tramite il new
+            let diavola = new Pizza('Diavola', 1);
+
+            console.log(margherita, diavola)
+            
+            margherita.mostraPrezzo();
+            diavola.mostraPrezzo();
+
+            //aggiunta di una proprietà a tutti gli oggetti della classe Pizza, utilizzando la proprietà PROTOTYPE
+            Pizza.prototype.aggiunte = {
+                doppiaMozzarella: 1,
+                basilico: 0.5
+            }
+            margherita.aggiunte.basilico
+
+
+            /*TYPESCRIPT : class Pizza{
+                constructor(_gusto, _prezzo){
+                    this.gusto = _gusto;
+                    this.prezzo = _prezzo;
+                }
+                mostraPrezzo(){ 
+                    console.log(`Il prezzo della pizza ${this.gusto} è pari a ${this.prezzo}$`);
+                }    
+            } */
+        }
+
+
+    </script>
+
+
+</body>
+</html>
