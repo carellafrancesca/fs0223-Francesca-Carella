@@ -17,8 +17,6 @@
   console.log(numeroDue !== numeroFornito);
   if ( numeroDue !== numeroFornito){
   console.log('not equal')
-  }else{
-    console.log('equal')
   }
 
 /* ESERCIZIO 3
