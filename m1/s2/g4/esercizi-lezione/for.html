@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //for ha tre settori nella parentesi separati dai punti e virgola, l'unico ad utilizzare ;.
+
+        for(let i = 0; i < 10; i++){ 
+            document.write(i + '<br>');
+        }
+
+        document.write('<hr>');
+
+        for(let y = 10; y > 0; y--){ 
+            document.write(y + '<br>');
+        }
+
+        document.write('<hr>');
+
+        //ciclare un array con for
+        let pizze = ['Margherita', 'Diavola', 'Marinara', 'Mimosa'];
+
+            for (let c = 0; c < pizze.length; c++){
+                document.write(pizze [c] + '<br>');
+            }
+
+        document.write('<hr>');
+
+        //ciclare un array con for of -CONSIGLIATO
+        let menu = ['Margherita', 'Diavola', 'Marinara', 'Mimosa'];
+        for(let pizza of menu){
+            document.write(pizza + '<br>')
+        }
+
+        document.write('<hr>');
+
+        //ciclare un oggetto - FOR IN - Non consigliatissima
+
+        let persona = {
+            nome: 'Mario',
+            cognome: 'Rossi',
+            anni: 30
+        }
+
+        console.log(persona.nome);//Mario
+        console.log(persona ['nome']);//Mario
+
+        for(let prop in persona){
+            document.write(`<li> ${prop}: ${persona[prop]}</li>`)
+        }    
+        document.write('<ul>');
+
+
+
+    </script>
+
+</body>
+</html>

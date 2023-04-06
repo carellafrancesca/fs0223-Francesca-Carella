@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let frutto = 'Kiwi';
+        switch(frutto){
+            case 'mela':
+                document.write('La mela costa 0.50 centesimi');
+                break; //serve a non far leggere le altre opzioni
+            case 'pera':
+                document.write('La pera costa 0.40 centesimi');
+            case 'mango':
+            case 'papaya':
+                document.write('Il mango e la papaya costano 2.40euro');
+                break;
+            default:
+                document.write(`Non abbiamo ${frutto}`)    
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //metodi ciclici degli array
+        //va bene per qualunque operazione sugli array
+        let menu = ['Margherita', 'Diavola', 'Marinara', 'Mimosa'];
+
+        menu.forEach(function(pizza){ //alternativa di for of
+            document.write(pizza + '<br>');
+        });
+
+        //map - tutte le volte che dobbiamo modificare i valori dell'array
+        let numeri = [1,2,3,4,5,6];
+
+        //map non modifica l'array originale, ne crea uno nuovo - con map RETURN è obbligatorio
+        let numeriX2 = numeri.map(function(n){
+            return n * 2
+        });
+        console.log(numeriX2);
+
+        //
+
+        menu = ['Margherita', 'Diavola', 'Marinara', 'Mimosa'];
+
+        menu = menu.map(function(pizza){
+            return `<b>${pizza}</b>`
+        });
+
+        menu.forEach(function(pizza){
+            document.write(pizza + '<br>');
+        });
+
+        //filter - restituisce un nuovo array
+        //si usa per recuperare una serie di elementi
+        numeri = [80,20,3,4,5,6];
+        let numeriFiltrati = numeri.filter(function(n){ //comparazione : booleano
+            return n < 20; 
+        });
+        console.log(numeriFiltrati)
+
+        let menuCompleto = [
+            {
+                gusto: 'Margherita',
+                prezzo: 5,
+                disponibile: true
+            },
+            {
+                gusto: 'Diavola',
+                prezzo: 1,
+                disponibile: true
+            },
+            {
+                gusto: 'Hawayana',
+                prezzo: 10,
+                disponibile: false
+            }
+        ]
+        let menufiltrato = menuCompleto.filter(function(pizza){
+                return pizza.disponibile
+        });
+        //prendo solo le pizze che hanno disponibile == true
+        console.log(menufiltrato);
+
+        //find
+        numeri = [80,25,20,3,4,5,6];
+
+        let numeroFiltrato = numeri.find(function(n){
+            return n > 20 //RESTITUISCE UN SOLO VALORE - IL PRIMO
+        });
+        console.log(numeroFiltrato);
+
+        //ELIMINARE DA UN ARRAY - INDEXOF
+
+        menu = ['Margherita', 'Diavola', 'Marinara', 'Mimosa'];
+
+        let indice = menu.indexOf('Marinara');//2
+
+        //per eliminare in array anche dal centro
+            menu.splice(indice, 1); //1 - la quantità
+        
+        console.log(menu)
+
+
+    </script>
+
+</body>
+</html>

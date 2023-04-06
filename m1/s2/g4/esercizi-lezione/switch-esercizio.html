@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <select onchange="mostraPrezzo(this)">
+        <option value="">--Seleziona--</option>
+        <option value="kiwi">Kiwi</option>
+        <option value="mela">Mela</option>
+        <option value="pera">Pera</option>
+        <option value="mango">Mango</option>
+        <option value="papaya">Papaya</option>
+
+    </select>
+
+    <div id="prezzo"></div>
+
+    <script>
+
+        function mostraPrezzo(select) {
+            let prezzo = document.getElementById('prezzo');
+
+            let frutto = select.value; 
+            let risultato;    
+            switch(frutto){
+                case 'mela':
+                    risultato = 'La mela costa 0.50 centesimi';
+                    break; //serve a non far leggere le altre opzioni
+                case 'pera':
+                    risultato = 'La pera costa 0.40 centesimi';
+                    break;
+                case 'mango':
+                case 'papaya':
+                    risultato = 'Il mango e la papaya costano 2.40euro';
+                    break;
+                default:
+                    risultato =  `Non abbiamo ${frutto}`   
+            }
+
+            prezzo.textContent = risultato;
+        }
+
+        //NON USARE PIU' DOCUMENT.WRITE MA CONSOLE.OG O GETELEMENT...
+
+    </script>
+
+</body>
+</html>
