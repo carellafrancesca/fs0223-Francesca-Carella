@@ -1,8 +1,23 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    line-height: 2rem;
     background-color: rgb(216, 212, 212);
+}
+
+main {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+h1 {
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+    font-size: 1.7rem;
+}
+
+h2, h3 {
+    font-size: 1.2rem;
 }
 
 #logo {
@@ -17,15 +32,21 @@ body {
     padding-top: 10px;
 }
 
-#info {
-    display: inline-block;
+#info, #footer {
     background-color: #2f3e51;
-    height: 35px;
+    padding: 10px 10px 10px 10px;
 }
 
-.info {
+.informations{
     color: white;
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px; 
+    padding-top: 10px;
+}
+
+.informations:hover {
+    border: 1px solid;
+    border-color: white;
 }
 
 #cards {
@@ -33,7 +54,6 @@ body {
     background-color:rgb(255, 119, 0);
     height: 35px;
     color: white;
-    margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
 
@@ -41,8 +61,98 @@ body {
     background-image:url(../assets/bg-image.png);
     color: white;
     text-align: center;
-    height: 140px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 50px;
 }
 
+.gifter {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.gift {
+    background-color: white;
+    padding: 20px;
+    text-align: left;
+}
+
+.shop {
+    display: inline;
+    color: rgb(63, 63, 207);
+    font-weight: bold;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.images {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px gray;
+    margin-top: 2rem;
+}
+
+#img1{
+    background-image:url(../assets/img_1.jpg)
+}
+
+#img2{
+    background-image: url(../assets/img_2.jpg);
+}
+
+#img3{
+    background-image: url(../assets/img_3.jpg);
+}
+
+#img4{
+    background-image: url(../assets/img_4.jpg);
+}
+
+.immagini{
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 10px;
+}
+
+#img5{
+    background-image: url(../assets/img_9.png);
+    margin-top: 2rem;
+}
+
+#img6{
+    background-image: url(../assets/img_10.png);
+    margin-top: 2rem;
+}
+
+.extra{
+    display: inline;
+    color: rgb(63, 63, 207);
+    font-weight: bold;
+}
+
+footer{
+    text-align: center;
+}
+
+.back{
+    color: white;
+    font-size: bold;
+}
+
+#logo2{
+    background-color: #232f3e;
+    padding: 50px;
+}
