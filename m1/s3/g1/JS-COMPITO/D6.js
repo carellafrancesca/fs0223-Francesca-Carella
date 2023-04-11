@@ -70,6 +70,7 @@ console.log(boundary(60));
  ritornare la stringa originale senza alterarla.
 */
 
+
 function epify (stringa){
   if (stringa.startsWith("EPICODE")){
     return stringa;
@@ -79,6 +80,7 @@ function epify (stringa){
 }
 
 console.log(epify("EPICODE"));
+
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
