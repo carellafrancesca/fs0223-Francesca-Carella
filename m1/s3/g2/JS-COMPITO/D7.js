@@ -27,7 +27,7 @@ function seconda(){
   for(let i = 0; i < 10; i++) arr.push(Math.floor(Math.random() * 101));
   return arr;
 }
-console.log(seconda);
+console.log(seconda(41));
 
 
 /* ESERCIZIO 3
@@ -195,6 +195,19 @@ const movies = [
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
 
+
+function getOlderMovie(){
+  let olderMovie = null;
+  for (let currentMovie of movies){
+    if (olderMovie == null || olderMovie.Year > currentMovie.Year){
+      olderMovie = currentMovie;
+    }
+  }
+  return olderMovie;
+}
+console.log(getOlderMovie());
+
+
 /* ESERCIZIO 11
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
@@ -207,10 +220,36 @@ const movies = [
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
 
+
+function moviesMillenium(){
+  movies.filter(function(movie){
+    return movie.Year >= 2000
+  });
+}
+console.log(moviesMillenium());
+
+
 /* ESERCIZIO 14
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 
+
+function getFilmById(imdbID) {
+  const film = movies.find((film) => film.imdbID === imdbID);
+  return film;
+}
+
+console.log(getFilmById("tt0077869"));
+
+
 /* ESERCIZIO 15
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+
+
+function yearSum(){
+  return movies.reduce(function(p,c){
+    return p + Number(c.Year);
+  },0);
+}
+console.log(yearSum());
