@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="test">Hello World!</div>
+    <div class="blocco">1</div>
+    <div class="blocco">2</div>
+    <div class="blocco">3</div>
+    <div class="blocco">4</div>
+
+    <ul id="menu">
+        <li>Item</li>
+        <li>Item</li>
+        <li class="no-bg">Item</li>
+        <li>Item</li>
+    </ul>
+
+    <ul>
+        <li>Item</li>
+        <li>Item</li>
+    </ul>
+
+    <script>
+
+        {
+            //funzioni classiche per selezionare elementi del dom
+            let test = document.getElementById("test");
+            console.dir(test);//console.dir al posto di console.log
+            test.textContent = 'Ciao Mondo!'; //sovrascrive quello che c'è nel div
+            test.style.backgroundColor = 'red';
+            test.style.backgroundColor = ''; //svuoto il valore della proprietà backgroundColor
+            
+            let blocchi = document.getElementsByClassName('blocco'); //restituisce un HTMLCollection, che non ha a disposizione molti metodi degli array
+            //utilizza Array.From() per ricavare un array normale
+            console.log(blocchi);
+            
+            for (let element of blocchi){
+                element.style.backgroundColor = 'blue';
+            }
+
+            /* potete utilizzare Array.from() in questo modo per poter utilizzare i metodi ciclici
+            Array.from(blocchi).forEach(function(element){
+                element.style.backgroundColor = 'blue';
+            });*/
+
+            //ecco come modificare un singolo blocco
+            //blocchi[0].style.backgroundColor = 'blue';
+
+            //seleziono tutti i tag di tipo div
+            let div = document.getElementsByTagName('div'); //restituisce sempre un HTMLCollection
+            console.log(div);
+        }
+
+
+        //funzioni nuove per selezionare elementi del dom
+
+        {
+            let test = document.querySelector('#test'); //querySelector restituiscce un solo elemento
+            test.textContent += '!!!'
+
+            let blocco1 = document.querySelector('.blocco'); //un solo elemento, il primo se parliamo di una lista
+            blocco1.style.color = 'white';
+
+            let blocchi = document.querySelectorAll('.blocco');//nodelist
+            //restituisce un array quando trova un solo elemento
+            console.log(blocchi);
+
+            blocchi
+            .forEach(element => element.style.border = '1px solid #000');
+
+            //esempio di quary di css più articolata
+
+            let li = document.querySelectorAll('#menu li:not(.no-bg)');
+
+            li.forEach(el => el.style.backgroundColor = 'yellow');
+
+        }
+
+
+    </script>
+
+</body>
+</html>
