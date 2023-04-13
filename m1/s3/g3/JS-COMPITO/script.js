@@ -78,6 +78,7 @@
           Scrivi una funzione che faccia scomparire la prima lista non ordinata
        */
    
+
         const hideFirstUl = function () {
          let destroyList = document.querySelector('#firstList');
          destroyList.style.display = 'none';
@@ -89,29 +90,40 @@
        /* ESERCIZIO 8 
           Scrivi una funzione che renda verde il background di ogni lista non ordinata
          */
-   
-       const paintItGreen = function () {
-   
-   
-       }
+
    
        /* ESERCIZIO 9
           Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
          */
    
+
        const makeItClickable = function () {
-   
-   
+        let h1 = document.querySelector('h1');
+
+        let testoArr = h1.innerText.split('');
+        testoArr.pop();
+        
+        let nuovoTesto = testoArr.join('');
+        h1.textContent = nuovoTesto;          
        }
+
+       document.querySelector('h1')
+       .addEventListener('click', makeItClickable);
+  
    
        /* ESERCIZIO 10
           Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
          */
    
+
        const revealFooterLink = function () {
-   
-   
+        let url = footer.querySelector('a').href;
+        alert(url);
        }
+
+       document.querySelector('footer')
+       .addEventListener('click', revealFooterLink);
+
    
        /* ESERCIZIO 11
           Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
@@ -119,10 +131,10 @@
        */
    
        const generateTable = function () {
-   
-   
+
+        
        }
-   
+
        /* ESERCIZIO 12
           Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
        */
