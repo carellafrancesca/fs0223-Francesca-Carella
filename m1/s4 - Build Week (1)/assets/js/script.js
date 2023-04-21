@@ -11,7 +11,7 @@ let risposte = {
 }
 
 async function getQuestions() {
-    let questions = await fetch('https://opentdb.com/api.php?amount=1&category=18').then(res => res.json()).then(res => res.results);
+    let questions = await fetch('https://opentdb.com/api.php?amount=10&category=18').then(res => res.json()).then(res => res.results);
 
     const FULL_DASH_ARRAY = 283;
     let TIME_LIMIT = 0;
@@ -22,7 +22,7 @@ async function getQuestions() {
     //clono il contenuto, generando ogni volta un nuovo clone
     let clone = templateQuiz.content.cloneNode(true);
 
-    //creo un array vuoto e pusho tutte le domande
+    //creo un array vuoto e pusho tutte le risposte
     let options = [];
     options.push(questions[contatore]["correct_answer"]);
     for (let element of questions[contatore]["incorrect_answers"]) {
