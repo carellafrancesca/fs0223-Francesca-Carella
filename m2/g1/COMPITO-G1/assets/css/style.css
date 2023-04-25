@@ -29,6 +29,7 @@ header {
   padding: 2em 1.5em;
   position: sticky;
   top: 10px;
+  z-index: 1;
 }
 
 @media screen and (min-width: 800px) {
@@ -312,6 +313,10 @@ button {
   }
 }
 
+section{
+  z-index: 0;
+}
+
 section h2{
   position: absolute;
   top: -15px;
@@ -418,7 +423,7 @@ footer a {
 
 .button1 {
   position: fixed;
-  right: 10px;
+  right: 0px;
   bottom: 150px;
   background-color: rgba(255, 255, 255, 0.821);
   border: 2px solid white;
@@ -431,7 +436,7 @@ footer a {
 
 .button2 {
   position: fixed;
-  right: 10px;
+  right: 0px;
   bottom: 90px;
   background-color: rgba(255, 255, 255, 0.821);
   border: 2px solid white;
@@ -444,7 +449,7 @@ footer a {
 
 .button3 {
   position: fixed;
-  right: 10px;
+  right: 0px;
   bottom: 30px;
   background-color: rgba(255, 255, 255, 0.821);
   border: 2px solid white;
@@ -457,30 +462,13 @@ footer a {
 
 @media screen and (min-width: 700px){
   .button1{
-  position: absolute;
-  right: 10px;
+  right: 0px;
   top: 10px;
-  background-color: rgba(255, 255, 255, 0.821);
-  border: 2px solid white;
-  border-top-left-radius: 10%;
-  border-bottom-left-radius: 10%;
-  padding: 7px; 
   z-index: 2;
-  color: #3f6bca;}
-
+  }
   .button2 {
-    position: absolute;
-    right: 10px;
-    top: 50px;
-    background-color: rgba(255, 255, 255, 0.821);
-    border: 2px solid white;
-    border-top-left-radius: 10%;
-    border-bottom-left-radius: 10%;
-    padding: 7px;
+    right: 0px;
+    top: 60px;
     z-index: 1;
-    color: #3f6bca;
   }
 }
-
-
-
