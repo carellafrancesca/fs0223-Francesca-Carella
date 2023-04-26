@@ -1,0 +1,19 @@
+#desktop{
+    background-color:#FBF7E3;
+    color: #622613;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.honey{
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+img{
+    width: 450px;
+}

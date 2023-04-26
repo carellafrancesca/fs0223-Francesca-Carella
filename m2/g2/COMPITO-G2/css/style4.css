@@ -1,0 +1,16 @@
+#desktop{
+    width: 400px;
+    background-color:#FBF7E3;
+    color: #622613;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.honey{
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
