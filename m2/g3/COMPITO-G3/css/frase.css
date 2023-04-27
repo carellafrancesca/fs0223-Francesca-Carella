@@ -15,10 +15,3 @@
     position: absolute;
     animation: fade 5s infinite;
 }
-
-/*
-@keyframes fade{
-    0%{
-        translate()
-    }
-}
