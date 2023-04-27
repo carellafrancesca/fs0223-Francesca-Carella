@@ -15,3 +15,18 @@
     position: absolute;
     animation: fade 5s infinite;
 }
+
+.first{
+    opacity: 0;
+    animation: 6s infinite;
+}
+
+.second{
+    opacity: 0;
+    animation-delay: 2s;
+}
+
+.third{
+    opacity: 0;
+    animation-delay: 4s;
+}
