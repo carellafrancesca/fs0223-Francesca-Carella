@@ -1,0 +1,24 @@
+#testoAlternato{
+    border: 2px solid black;
+    margin-top: 30px;
+    margin-left: 30px;
+    padding: 15px;
+    width: 400px;
+    height: 70px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    position: relative;
+}
+
+.parole{
+    color: lightslategray;
+    position: absolute;
+    animation: fade 5s infinite;
+}
+
+/*
+@keyframes fade{
+    0%{
+        translate()
+    }
+}

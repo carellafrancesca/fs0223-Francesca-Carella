@@ -1,0 +1,71 @@
+body{
+    font-family: 'Indie Flower', cursive;
+}
+
+h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+p{
+    font-size: 20px;
+    margin-top: -50px;
+}
+
+#container-postit{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: gray;
+    padding: 10px;
+    height: 400px;
+    width: 850px;
+}
+
+.one, 
+.five,
+.seven {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+	margin-top: 20px;
+	padding: 10px;
+    height: 110px;
+    width: 150px;
+    background-color: lightgoldenrodyellow;
+    border: 0.5px solid lightgoldenrodyellow;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.227);
+    transform: rotate(-7deg);
+}
+
+.two,
+.four,
+.eight{
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    margin-top: 20px;
+	padding: 10px;
+    height: 110px;
+    width: 150px;
+    background-color: rgb(156, 206, 156);
+    border: 0.5px solid rgb(156, 206, 156);
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.227);
+    transform: rotate(7deg);
+}
+
+.three,
+.six{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+	margin-top: 20px;
+	padding: 10px;
+    height: 110px;
+    width: 150px;
+    background-color: lightsteelblue;
+    border: 0.5px solid lightsteelblue;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.227);
+    transform: rotate(-9deg);
+}
