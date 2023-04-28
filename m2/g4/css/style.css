@@ -1,0 +1,266 @@
+body{
+    box-sizing: border-box;
+}
+
+/* BARRA NAVIGAZIONE */
+
+#navbar{
+    background-color: #ffc017;
+    border-bottom: 1px solid black;
+    padding: 40px 100px;    
+    display: flex;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    padding: 15px 100px;
+}
+
+.lista{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-grow: 1;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.lista div{
+    margin-right: 30px;
+}
+
+div.selected-button{
+    background-color: #191919;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 40px;
+    border: none;
+}
+
+/* HEADER */
+
+.header{
+    background-color: #ffc017;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+#start{
+    padding-left: 80px;
+}
+
+.first-title{
+    font-size: 7rem;
+    padding-top: 70px;
+    padding-bottom: 15px;
+}
+
+.second-title{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    padding-bottom: 70px;
+}
+
+.button-Start{
+    background-color: #191919;
+    color: white;
+    padding: 12px 50px;
+    border-radius: 40px;
+    border: none;
+    font-size: 1.3em;
+    margin-bottom: 40px;
+}
+
+.header .svg-img{
+    align-items: flex-end;
+    max-width: 40%;
+}
+
+/* TRENDING ARTICLES */
+
+#trending{
+    display: flex;
+    flex-direction: column;
+}
+
+.title-trending{
+    margin-top: 40px;
+    margin-left: 40px;
+    padding-bottom: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+#trending .contain-all{
+    padding: 0px 80px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid gray;
+}
+
+.trend-container{
+    width: 32%;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.trend-object{
+    display: flex;
+    flex-direction: column;
+}
+
+.number{
+    padding-right: 15px;
+    font-weight: bold;
+    font-size: 1.7rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(128, 128, 128, 0.334);
+}
+
+.trend-credits {
+    font-weight: bold;
+    font-family:'Roboto', sans-serif;
+    font-size: 0.9em;
+}
+
+.trend-names{
+    font-weight: bold;
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.date,
+.article-extra{
+    color: rgba(128, 128, 128, 0.675);
+    margin-top: 5px;
+}
+
+.title-img-trending{
+    margin-left: 40px;
+}
+
+.title-img {
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.trend-elements {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* HOMEFEED */
+
+#homefeed{
+    display: flex;
+}
+
+.mainContents{
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+}
+
+.articles{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 80px;
+}
+
+.article{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.credit{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.textContentArticle{
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle{
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.greyButton{
+    border-radius: 25px;
+    background-color: rgba(178, 178, 178, 0.159);
+    color: gray;
+    padding: 5px 10px;
+}
+
+img.img-article{
+    width: 200px;
+}
+
+/* ASIDE */
+
+.aside{
+    padding: 0px 80px;
+    width: 45vw;
+    height: 50vh;
+    position: sticky;
+    top: 100px;
+    z-index: 100;
+}
+
+.aside-title{
+    padding-top: 30px;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.aside-container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aside-buttons{
+    background-color: rgba(224, 219, 219, 0.492);
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin: 5px;
+    text-align: center;
+}
+
+.more-topics{
+    color: #1a8917;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+    font-family: 'Roboto', sans-serif;
+}
+
+.links{
+    color: gray;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.links div{
+    margin-right: 25px;
+    margin-bottom: 10px;
+}
+
+/*
+.letterM {
+    transition: 200ms ease-in;
+    opacity: 1;
+}*/
