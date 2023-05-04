@@ -1,0 +1,26 @@
+.navbar{
+    height: 60px;
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.nav-intro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img{
+        height: 70px;
+        margin-left: 50px;
+    }
+    ul.links{
+        display: flex;
+        list-style-type: none;
+        margin-left: 1100px;
+    }
+    ul li{
+        text-decoration: none;
+        margin-left: 15px;
+    }
+}

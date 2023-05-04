@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.navbar {
+  height: 60px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.nav-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div.nav-intro img {
+  height: 70px;
+  margin-left: 50px;
+}
+div.nav-intro ul.links {
+  display: flex;
+  list-style-type: none;
+  margin-left: 1100px;
+}
+div.nav-intro ul li {
+  text-decoration: none;
+  margin-left: 15px;
+}/*# sourceMappingURL=style.css.map */
