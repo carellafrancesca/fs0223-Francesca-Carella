@@ -1,0 +1,67 @@
+body{
+    background-color: black;
+}
+
+.btn{
+    border-radius: 0%;
+}
+
+/*NAVBAR*/
+
+#logo{
+    height: 50px;
+}
+
+#icon{
+    height: 35px;
+}
+
+/*INTRO-MENU*/
+
+.genres-menu{
+    margin-left: 40px;
+}
+
+.extra-buttons{
+    display: flex;
+    flex-flow: row;
+    justify-content: right;
+    margin-top: -40px;
+}
+
+/*FIRST ROW MENU*/
+
+.trends-row{
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.covers{
+    width: 99%;
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+.covers:hover {
+    opacity: 1;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/*FOOTER*/
+
+.icon-white{
+    color: lightgray;
+    padding-right: 10px;
+}
+
+#footer-elements{
+    margin-top: 60px;
+}
+
+#footer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
