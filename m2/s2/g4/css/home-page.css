@@ -45,7 +45,6 @@ body{
 .covers:hover {
     opacity: 1;
     transition: 0.3s;
-    transform: scale(1.5);
     cursor: pointer;
 }
 
