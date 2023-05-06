@@ -65,3 +65,46 @@ body{
     justify-content: center;
     cursor: pointer;
 }
+
+/* EDIT PROFILE */
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:lightgray;
+    height: 1px;
+}
+
+#icon2{
+    width: 200px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 20px;
+}
+
+#autoplay-controls{
+    margin-bottom: 30px;
+}
+
+input[type="checkbox"]{
+    background-color: black;
+    border: 1px solid white;
+    padding: -10px;
+    width: 30px;
+    height: 30px;
+}
+
+input[type=checkbox]:checked{
+    background-color: black;
+}
+
+/* BUTTONS */
+
+#last-buttons{
+    margin-left: 150px;
+    margin-bottom: 50px;
+}
