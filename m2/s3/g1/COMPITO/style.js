@@ -15,11 +15,11 @@ console.log(firstUser);
 let secondUser = new User('Francesca', 'Carella', 23, 'Italy');
 console.log(secondUser);
 
-function ageComparison (User1,User2){
-    if(User1.age < User2.age){
+function ageComparison (firstUser,secondUser){
+    if(firstUser.age < secondUser.age){
         return 'false'
     }else{
-        return User1.firstName + ' ' + 'è più vecchio di' + ' ' + User2.firstName;
+        return firstUser.firstName + ' ' + 'è più vecchio di' + ' ' + secondUser.firstName;
     }
 }
 
