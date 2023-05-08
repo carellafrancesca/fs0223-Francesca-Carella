@@ -1,6 +1,6 @@
 // PRIMO ESERCIZIO //
 
-class User1{
+class User{
     constructor(firstName, lastName, age, location){
     this.firstName = firstName;
     this.lastName = lastName;
@@ -9,19 +9,10 @@ class User1{
     }
 }
 
-let firstUser = new User1('Mario', 'Rossi', 28, 'Italy');
+let firstUser = new User('Mario', 'Rossi', 28, 'Italy');
 console.log(firstUser);
 
-class User2{
-    constructor(firstName, lastName, age, location){
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.location = location;
-    }
-}
-
-let secondUser = new User2('Francesca', 'Carella', 23, 'Italy');
+let secondUser = new User('Francesca', 'Carella', 23, 'Italy');
 console.log(secondUser);
 
 
