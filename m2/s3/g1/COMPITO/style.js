@@ -50,7 +50,22 @@ class Pet {
     }
 }
 
+
+let nameInputField = document.getElementById('pet-name')
+let ownerInputField = document.getElementById('owner-name')
+let speciesInputField = document.getElementById('species')
+let breedInputField = document.getElementById('breed')
+
+let species = [];
+let breed = [];
+
 let formReference = document.querySelector('form')
 formReference.addEventListener('submit', (e) => {
   e.preventDefault()
+    let elementsForm = new Element(nameInputField.value,ownerInputField.value,speciesInputField.value,breedInputField-value)
+    console.log(elementsForm)
+
+    species.push('Cane', 'Gatto', 'Coniglio', 'Pesce')
+    breed.push('Labrador', 'Soriano', 'Nano')
+    createList()
 })
