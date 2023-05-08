@@ -1,3 +1,5 @@
+// PRIMO ESERCIZIO //
+
 class User1{
     constructor(firstName, lastName, age, location){
     this.firstName = firstName;
@@ -32,3 +34,23 @@ function ageComparison (User1,User2){
 }
 
 console.log(ageComparison(firstUser,secondUser));
+
+// SECONDO ESERCIZIO //
+
+class Pet {
+    constructor(petName, ownerName, species, breed) {
+        this.petName = petName;
+        this.ownerName = ownerName;
+        this.species = species;
+        this.breed = breed;
+    }
+
+    compareOwners = function (pets){
+        return this.ownerName === pets.ownerName
+    }
+}
+
+let formReference = document.querySelector('form')
+formReference.addEventListener('submit', (e) => {
+  e.preventDefault()
+})
