@@ -27,6 +27,13 @@ console.log(ageComparison(firstUser,secondUser));
 
 // SECONDO ESERCIZIO //
 
+let petList = []
+
+let petnameInputField = document.getElementById('#pet-name')
+let ownerInputField = document.getElementById('#owner-name')
+let speciesInputField = document.getElementById('#species')
+let breedInputField = document.getElementById('#breed')
+
 class Pet {
     constructor(petName, ownerName, species, breed) {
         this.petName = petName;
@@ -34,28 +41,27 @@ class Pet {
         this.species = species;
         this.breed = breed;
     }
-
-    compareOwners = function (pets){
-        return this.ownerName === pets.ownerName
-    }
 }
 
+const putPetsinHTML = function(){
+    let petListReference = document.getElementById
+}
 
-let nameInputField = document.getElementById('pet-name')
-let ownerInputField = document.getElementById('owner-name')
-let speciesInputField = document.getElementById('species')
-let breedInputField = document.getElementById('breed')
+// new Pet() 
+// console.log()
 
-let species = [];
-let breed = [];
+let petformReference = document.querySelector('form')
+petformReference.addEventListener('submit', (e) => {
+  e.preventDefault() //questo evita che la pagina si aggiorni in automatico
 
-let formReference = document.querySelector('form')
-formReference.addEventListener('submit', (e) => {
-  e.preventDefault()
-    let elementsForm = new Element(nameInputField.value,ownerInputField.value,speciesInputField.value,breedInputField-value)
-    console.log(elementsForm)
+    let petCreated = new Pet(petnameInputField.value,ownerInputField.value,speciesInputField.value,breedInputField.value)
+    console.log('HO CREATO UN PET', petCreated)
 
-    species.push('Cane', 'Gatto', 'Coniglio', 'Pesce')
-    breed.push('Labrador', 'Soriano', 'Nano')
-    createList()
+    petList.push(petCreated)
+    petnameInputField.value = ''
+    ownerInputField.value = ''
+    speciesInputField.value = ''
+    breedInputField.value = ''
+
+    petnameInputField
 })
