@@ -75,4 +75,9 @@ function save(e) {
   lastName.textContent = localStorage.getItem("Names");
   document.getElementbyId("container").reset();
 }
+
+buttonDelete.addEventListener('click', delete);
+function delete(e) {
+  localStorage.removeItem('#target')
+}
 */
