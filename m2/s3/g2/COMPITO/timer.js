@@ -1,8 +1,12 @@
-var start = new Date().getTime();
 
-for (i = 0; i < 50000; ++i) {
+let seconds = sessionStorage.getItem("timer") || 0;
+
+const timerElement = document.getElementById("timer2");
+
+function displayTimer() {
+  seconds++;
+  timerElement.textContent = seconds;
+  sessionStorage.setItem("timer", seconds);
 }
 
-var end = new Date().getTime();
-var time = end - start;
-alert('Execution time: ' + time);
+const timer = setInterval(displayTimer, 1000);
