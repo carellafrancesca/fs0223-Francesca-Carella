@@ -59,3 +59,20 @@ const restoreContent = function () {
 window.onload = function () {
     restoreContent()
 } 
+
+/* let nameField = document.getElementsyTagName("input")[0]
+
+const buttonSave = document.getElementsbyId("save");
+const buttonDelete = document.getElementsbyId("delete");
+
+const lastName = document.getElementbyId("#target");
+
+buttonSave.addEventListener("click", save);
+function save(e) {
+  e.preventDefault();
+  localStorage.setItem("Names", nameField.value);
+
+  lastName.textContent = localStorage.getItem("Names");
+  document.getElementbyId("container").reset();
+}
+*/
