@@ -2,6 +2,7 @@ let nameList = []
 
 const nameField = document.getElementById('name')
 const saveButton = document.getElementById('save-button')
+let clearButton = document.getElementById('clear-button')
 
 const renderList = function () {
     console.log('')
@@ -26,7 +27,7 @@ saveButton.addEventListener('click', function (e) {
     nameList.push(newUser)
 
     const contactsListAsAString = JSON.stringify(nameList) 
-    console.log("valore dell'array stringhifizzato:", contactsListAsAString)    
+    console.log(contactsListAsAString)    
     localStorage.setItem('contactsArray', contactsListAsAString)
 
     nameField.value = ''
@@ -42,6 +43,11 @@ window.onload = function () {
     }
 }
 
+clearButton.addEventListener('click', function () {
+    localStorage.removeItem('savedText')
+    nameField.value = ''
+})
+
 const restoreContent = function () {
     let previouslySavedName = localStorage.getItem('savedText') 
     if (previouslySavedName) {
@@ -52,5 +58,4 @@ const restoreContent = function () {
 
 window.onload = function () {
     restoreContent()
-}
-  
+} 
