@@ -25,7 +25,7 @@ function ageComparison (firstUser,secondUser){
 
 console.log(ageComparison(firstUser,secondUser));
 
-// SECONDO ESERCIZIO //
+// SECONDO ESERCIZIO - NON FINITO //
 
 let petList = []
 
