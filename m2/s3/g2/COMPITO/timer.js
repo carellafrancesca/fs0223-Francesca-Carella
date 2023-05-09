@@ -1,7 +1,7 @@
 
 let seconds = sessionStorage.getItem("timer") || 0;
 
-const timerElement = document.getElementById("timer2");
+const timerElement = document.getElementById("counter");
 
 function displayTimer() {
   seconds++;
