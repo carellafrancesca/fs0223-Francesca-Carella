@@ -16,7 +16,7 @@ fetch('https://striveschool-api.herokuapp.com/books')
             col.innerHTML = `
             <div class="card">
                 <img src=${books.img} class="card-img-top" style="height:400px" alt="...">
-                <div class="card-body" style="height:200px">
+                <div class="card-body">
                     <h5 class="card-title">${books.title}</h5>
                     <p class="card-text">${books.price}</p>
                     <p class="card-text">${books.category}</p>
@@ -26,8 +26,11 @@ fetch('https://striveschool-api.herokuapp.com/books')
                 </div>
             </div>
             `
+            let deleteB = col.querySelector('#deleteButton');
+            deleteB.addEventListener('click', () => {
+                col.remove();
+            });
             mainRow.appendChild(col)
-
         })
     })
     .catch((error) => {
