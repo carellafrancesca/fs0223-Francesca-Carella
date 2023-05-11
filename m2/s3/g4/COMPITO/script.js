@@ -13,9 +13,13 @@ fetch("https://api.pexels.com/v1/search?query=cities", {
       throw new Error("Errore")
     }
 })
-.then((data) => {
-    console.log(data)
+.then((photos) => {
+    console.log(photos)
 })
 .catch((error) => {
     console.log(error)
 })
+
+const images = function(photos){
+    photos.forEach()
+}
