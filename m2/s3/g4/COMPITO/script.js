@@ -14,7 +14,7 @@ fetch("https://api.pexels.com/v1/search?query=cities", {
     }
 })
 .then((data) => {
-    console.log(data.photos)
+    console.log(data)
 })
 .catch((error) => {
     console.log(error)
