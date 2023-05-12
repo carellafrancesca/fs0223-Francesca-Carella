@@ -13,6 +13,39 @@
 
 const product_URL = 'https://striveschool-api.herokuapp.com/api/product/';
 
+let addressBarContent = new URLSearchParams(window.location.search)
+let productID = addressBarContent.get('productId');
+console.log(productID);
+
+if (productID){
+  document.getElementById('backoffice-title').innerHTML =
+    "Back-Office Page - Modifica Prodotto";
+  document.getElementById('save-button').innerHTML = "Modifica Prodotto";
+
+  let deleteButton = document.getElementById("delete-button");
+  deleteButton.classList.remove("d-none");
+  deleteButton.addEventListener("click", () => {
+    fetch(product_URL + productID, {
+      method: "DELETE",
+      headers: {
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDVlMDRmODg4Zjc0MDAwMTQyODc0ODUiLCJpYXQiOjE2ODM4ODMyNTYsImV4cCI6MTY4NTA5Mjg1Nn0.vsL0r6Oa3M2-4AjxlQSR9ImYVLgqDTc-1t_WHiTrlfY"
+      }
+    })
+    .then((response) => {
+      console.log(response)
+      if (response.ok) {
+        alert("SCHEDA CANCELLATA")
+        location.assign("homepage.html");
+      } else {
+        throw new Error("Errore nell'eliminazione della scheda")
+      }
+    })
+    .catch((error) => {
+      console.log(error)
+    });
+  });
+}
+
 fetch(product_URL, {
     headers: {
         Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDVlMDRmODg4Zjc0MDAwMTQyODc0ODUiLCJpYXQiOjE2ODM4ODMyNTYsImV4cCI6MTY4NTA5Mjg1Nn0.vsL0r6Oa3M2-4AjxlQSR9ImYVLgqDTc-1t_WHiTrlfY"
@@ -73,6 +106,53 @@ const eventForm = document.getElementById('event-form')
       .catch((err) => {
         console.log(err)
     })
+
+    fetch(productID ? product_URL + productID : product_URL, {
+      method: productID ? "PUT" : "POST",
+      body: JSON.stringify(newObject),
+        headers: {
+            Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDVlMDRmODg4Zjc0MDAwMTQyODc0ODUiLCJpYXQiOjE2ODM4ODMyNTYsImV4cCI6MTY4NTA5Mjg1Nn0.vsL0r6Oa3M2-4AjxlQSR9ImYVLgqDTc-1t_WHiTrlfY",
+            'Content-Type': 'application/json'
+        },  
+    })
+    .then((res) => {
+      if (res.ok){
+        alert (
+          productID ? "Scheda Modificata" : "Scheda Creata"
+        );
+        location.assign("homepage.html");
+      }else {
+        throw new Error("Errore nel salvataggio");
+      }
+    })
+    .catch((err) => {
+      console.log(err)
+    });
 }); 
 
 
+fetch(product_URL + productID, {
+  headers: {
+    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDVlMDRmODg4Zjc0MDAwMTQyODc0ODUiLCJpYXQiOjE2ODM4ODMyNTYsImV4cCI6MTY4NTA5Mjg1Nn0.vsL0r6Oa3M2-4AjxlQSR9ImYVLgqDTc-1t_WHiTrlfY",
+    'Content-Type': 'application/json'
+  },
+})
+  .then((response) => {
+    console.log(response)
+    if (response.ok) {
+      return response.json()
+    } else {
+      throw new Error("Errore di recupero");
+    }
+  })
+  .then((data) => {
+    console.log("Dati del singolo prodotto", data)
+    document.getElementById("name").value = data.name;
+    document.getElementById("description").value = data.description;
+    document.getElementById("brand").value = data.brand;
+    document.getElementById("imageUrl").value = data.imageUrl;
+    document.getElementById("price").value = data.price;
+  })
+  .catch((error) => {
+    console.log(error)
+  });

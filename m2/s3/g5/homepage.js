@@ -35,8 +35,8 @@ const imageElement = function (elements){
               <p class="card-text">${elements.description}</p>
               <p class="card-text">${elements.brand}</p>
               <p class="card-text">${elements.price}€</p>
-              <a href="./backoffice.html?eventId=${elements._id}"class="btn btn-dark">COMPRA</a>
-              <a href="./backoffice.html?eventId=${elements._id}"class="btn btn-dark mt-1">DETTAGLI</a>
+              <a href="./back-office.html?productId=${elements._id}" target="_blank" class="btn btn-dark">MODIFICA</a>
+              <a href="#${elements._id}"class="btn btn-dark">COMPRA</a>
             </div>
           </div>`
   
