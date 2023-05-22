@@ -1,8 +1,8 @@
-let randomNumber:number = Math.floor(Math.random() * (100-1) + 1);
-console.log("Il numero generato casualmente è", randomNumber);
-    
 let player1:number = 35;
 let player2:number = 60;
+
+let randomNumber:number = Math.floor(Math.random() * (100-1) + 1);
+console.log("Il numero generato casualmente è", randomNumber);
 
 var distanza_giocatore1:number = Math.abs(randomNumber - player1);
 var distanza_giocatore2:number = Math.abs(randomNumber - player2);

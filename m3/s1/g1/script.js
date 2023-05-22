@@ -1,7 +1,7 @@
+var player1 = 35;
+var player2 = 60;
 var randomNumber = Math.floor(Math.random() * (100 - 1) + 1);
 console.log("Il numero generato casualmente è", randomNumber);
-var player1 = 25;
-var player2 = 60;
 var distanza_giocatore1 = Math.abs(randomNumber - player1);
 var distanza_giocatore2 = Math.abs(randomNumber - player2);
 function generateNumber() {
