@@ -1,4 +1,5 @@
-var bool = true;
+"use strict";
+let bool = true;
 if (bool) {
     console.log('vero');
 }
