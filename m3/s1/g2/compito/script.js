@@ -1,4 +1,3 @@
-"use strict";
 class bankAccount {
     constructor(balanceInitial = 0) {
         this.balance = balanceInitial;
