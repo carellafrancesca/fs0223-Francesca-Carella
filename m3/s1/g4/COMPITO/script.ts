@@ -1,4 +1,4 @@
-//CLASSE: CAPI SINGOLI
+//CLASSE
 class Capo{
     id:number;
     codprod:number;
@@ -12,7 +12,18 @@ class Capo{
     disponibile:string;
     saldo:number;
 
-    constructor(id: number, codprod: number, collezione: string, capo: string, modello: number, quantità: number, colore: string, prezzoivaesclusa: number, prezzoivainclusa: number, disponibile: string, saldo: number)
+    constructor(
+      id: number, 
+      codprod: number,
+      collezione: string,
+      capo: string, 
+      modello: number, 
+      quantità: number, 
+      colore: string, 
+      prezzoivaesclusa: number, 
+      prezzoivainclusa: number, 
+      disponibile: string, 
+      saldo: number)
     {
         this.id = id;
         this.codprod = codprod;

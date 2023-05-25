@@ -1,4 +1,4 @@
-//CLASSE: CAPI SINGOLI
+//CLASSE
 var Capo = /** @class */ (function () {
     function Capo(id, codprod, collezione, capo, modello, quantità, colore, prezzoivaesclusa, prezzoivainclusa, disponibile, saldo) {
         this.id = id;
