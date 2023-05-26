@@ -8,17 +8,27 @@ interface ISmartphone{
     getNumeroChiamate():number;
     chiamata(min:number):void;
     azzeraChiamate():void;
+    mostraRegistroChiamate():void;
+    filtraChiamatePerDataOra():void;
+}
+
+interface IRegistrochiamate{
+    id:number;
+    durata:number;
+    dataOraChiamata:Date;
 }
 
 class Smartphone implements ISmartphone{
     carica:number;
     numeroChiamate: number;
     costoMinuto: number;
+    registroChiamate:IRegistrochiamate[];
 
     constructor(carica:number){
         this.carica = carica;
         this.numeroChiamate = 0;
         this.costoMinuto = 0.20;
+        this.registroChiamate = [];
     }
 
     ricarica(euro:number):void{
@@ -38,7 +48,15 @@ class Smartphone implements ISmartphone{
         if (costoTotaleChiamata <= this.carica){
             this.carica -= costoTotaleChiamata;
             this.numeroChiamate ++;
+
+            let chiamate:IRegistrochiamate = {
+                id: this.numeroChiamate,
+                durata: min,
+                dataOraChiamata: new Date()
+            }
+            this.registroChiamate.push(chiamate)
             console.log(`La chiamata è durata ${min} minuti`)
+
         } else {
             console.log("Credito insufficiente.");
         }
@@ -46,6 +64,18 @@ class Smartphone implements ISmartphone{
 
     azzeraChiamate():void{
         this.numeroChiamate = 0;
+    }
+
+    mostraRegistroChiamate(): void {
+        for(let i=0; i<this.registroChiamate.length; i++){
+            console.log(this.registroChiamate[i]);
+        }
+    }
+
+    filtraChiamatePerDataOra(): void {
+        for(let i=0; i<this.registroChiamate.length; i++){
+            console.log(this.registroChiamate[i].dataOraChiamata);
+        }
     }
 
 }
@@ -65,6 +95,9 @@ cellulare1.chiamata(3);
 console.log(cellulare1.numero404());
 console.log(cellulare1.numeroChiamate);
 
+cellulare1.mostraRegistroChiamate();
+cellulare1.filtraChiamatePerDataOra();
+
 cellulare1.azzeraChiamate();
 console.log(cellulare1.numeroChiamate);
 
@@ -79,6 +112,9 @@ cellulare2.chiamata(7);
 console.log(cellulare2.numero404());
 console.log(cellulare2.numeroChiamate);
 
+cellulare1.mostraRegistroChiamate();
+cellulare1.filtraChiamatePerDataOra();
+
 cellulare2.azzeraChiamate();
 console.log(cellulare2.numeroChiamate);
 
@@ -92,6 +128,9 @@ console.log(cellulare3.numero404());
 cellulare3.chiamata(15);
 console.log(cellulare3.numero404());
 console.log(cellulare3.numeroChiamate);
+
+cellulare1.mostraRegistroChiamate();
+cellulare1.filtraChiamatePerDataOra();
 
 cellulare3.azzeraChiamate();
 console.log(cellulare3.numeroChiamate);

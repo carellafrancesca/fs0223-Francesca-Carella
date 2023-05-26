@@ -4,6 +4,7 @@ class Smartphone {
         this.carica = carica;
         this.numeroChiamate = 0;
         this.costoMinuto = 0.20;
+        this.registroChiamate = [];
     }
     ricarica(euro) {
         this.carica += euro;
@@ -19,6 +20,12 @@ class Smartphone {
         if (costoTotaleChiamata <= this.carica) {
             this.carica -= costoTotaleChiamata;
             this.numeroChiamate++;
+            let chiamate = {
+                id: this.numeroChiamate,
+                durata: min,
+                dataOraChiamata: new Date()
+            };
+            this.registroChiamate.push(chiamate);
             console.log(`La chiamata è durata ${min} minuti`);
         }
         else {
@@ -27,6 +34,16 @@ class Smartphone {
     }
     azzeraChiamate() {
         this.numeroChiamate = 0;
+    }
+    mostraRegistroChiamate() {
+        for (let i = 0; i < this.registroChiamate.length; i++) {
+            console.log(this.registroChiamate[i]);
+        }
+    }
+    filtraChiamatePerDataOra() {
+        for (let i = 0; i < this.registroChiamate.length; i++) {
+            console.log(this.registroChiamate[i].dataOraChiamata);
+        }
     }
 }
 let cellulare1 = new Smartphone(0);
@@ -40,6 +57,8 @@ console.log(cellulare1.numero404());
 cellulare1.chiamata(3);
 console.log(cellulare1.numero404());
 console.log(cellulare1.numeroChiamate);
+cellulare1.mostraRegistroChiamate();
+cellulare1.filtraChiamatePerDataOra();
 cellulare1.azzeraChiamate();
 console.log(cellulare1.numeroChiamate);
 //CELLULARE2
@@ -50,6 +69,8 @@ console.log(cellulare2.numero404());
 cellulare2.chiamata(7);
 console.log(cellulare2.numero404());
 console.log(cellulare2.numeroChiamate);
+cellulare1.mostraRegistroChiamate();
+cellulare1.filtraChiamatePerDataOra();
 cellulare2.azzeraChiamate();
 console.log(cellulare2.numeroChiamate);
 //CELLULARE3
@@ -60,5 +81,7 @@ console.log(cellulare3.numero404());
 cellulare3.chiamata(15);
 console.log(cellulare3.numero404());
 console.log(cellulare3.numeroChiamate);
+cellulare1.mostraRegistroChiamate();
+cellulare1.filtraChiamatePerDataOra();
 cellulare3.azzeraChiamate();
 console.log(cellulare3.numeroChiamate);
