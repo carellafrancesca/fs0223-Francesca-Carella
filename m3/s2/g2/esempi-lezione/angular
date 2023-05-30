@@ -1,0 +1,236 @@
+
+<!-- MODULES: USER -->
+
+export class User {
+
+    nome: string;
+    cognome: string;
+  
+    constructor(nome: string, cognome: string) {
+      this.nome = nome;
+      this.cognome = cognome;
+    }
+  
+}
+
+<!-- ATTRIBUTI -->
+
+<!--la sintassi con le quadre  fa si che src possa ricevere valori dinamici-->
+<!--<img [src]="currentImage">
+
+{{counter}}
+-->
+<!-- ATTR.COMPONENT.TS -->
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-attr',
+  templateUrl: './attr.component.html',
+  styleUrls: ['./attr.component.scss']
+})
+export class AttrComponent {
+
+  images:string[] = [
+    "assets/1.jpg",
+    "assets/2.jpg",
+    "assets/3.jpg",
+    "assets/4.jpg",
+  ];
+
+  counter:number = 0;
+  currentImage:string = this.images[this.counter];
+
+  //uso il costruttore perchè viene avviato quando carica la pagina
+  constructor(){
+
+    setInterval(()=>{
+
+      //ogni 3 secondi avvio il metodo change image
+      this.changeImage();
+
+    }, 3000)
+
+  }
+
+  changeImage(){
+
+    if(this.counter < this.images.length - 1){
+      this.counter++;
+    }else{
+      this.counter = 0;
+    }
+
+    this.currentImage = this.images[this.counter]
+
+  }
+}
+
+<!-- FORM -->
+
+<!--form con proprietà indipendenti-->
+
+<!-- 
+<form>
+
+    <input type="text" name="nome" [(ngModel)]="nome">
+    <input type="text" name="cognome" [(ngModel)]="cognome">
+  
+</form>
+  
+  {{nome}}
+  <hr>
+-->
+
+<!-- 
+ <form>
+  
+    <input type="text" name="nome" [(ngModel)]="user.nome">
+    <input type="text" name="cognome" [(ngModel)]="user.cognome">
+  
+</form> 
+-->  
+  <!--form con proprietà derivanti da un oggetto-->
+
+  <!--converto l'oggetto in json così da poterlo vedere in formato stringa-->
+  <!--{{ user | json }}-->
+
+
+<!-- FORM.COMPONENT.TS -->
+
+import { Component } from '@angular/core';
+import { User } from '../Models/user';
+
+@Component({
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss']
+})
+export class FormComponent {
+
+  nome:string = '';
+  cognome:string = '';
+
+  user:User = new User('Mario','Rossi');
+
+}
+
+<!-- PROP -->
+
+<!-- Pulsante mostra nascondi -->
+<!--
+
+  (click)="toggle()" è a tutti gli effetti un event listener
+
+  $event permette di registrare info sull'evento fornendo un oggetto Event al metodo toggle
+-->
+<!-- 
+ <button
+(click)="toggle($event)"
+[innerText]="visibile ? 'Nascondi' : 'Mostra'"
+class="btn btn-success"
+></button> 
+-->
+
+<!--stesso pulsante ma senza metodo al click-->
+<!--[innerText]="visibile ? 'Nascondi' : 'Mostra'" => è un ternario che definisce quale valore assegnare alla prop innerText-->
+
+<!-- 
+  <button
+(click)="visibile = !visibile"
+[innerText]="visibile ? 'Nascondi' : 'Mostra'"
+class="btn btn-success"
+></button>
+-->
+
+<!-- ngif distrugge l'elemento a cui è assegnato se riceve un bool false-->
+
+<!--
+  <p *ngIf="visibile">
+  Elemento 1
+</p>
+<p *ngIf="!visibile">
+  Elemento2
+</p>
+
+-->
+
+<!-- PROP.COMPONENT.TS -->
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-prop',
+  templateUrl: './prop.component.html',
+  styleUrls: ['./prop.component.scss']
+})
+export class PropComponent {
+
+  title:string = 'Componente prop';
+
+  visibile:boolean = true
+
+  toggle(evento:Event){
+
+    console.log(evento);//oggetto contenente info sull'evento
+    this.visibile = !this.visibile;//inverto il valore booleano
+  }
+
+}
+
+<!-- STYLE -->
+
+<!--
+  La classe alert-success appare solo se la proprietà success == true
+  [class.alert-success]="success" 
+  <div class="alert"
+  (mouseover)="success = !success"
+  [class.alert-danger]="!success"
+  [class.alert-success]="success"
+  >
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quisquam soluta error consequuntur quod rem, veniam deleniti sapiente illum. Nam dolorem modi id perspiciatis cumque recusandae voluptate facilis deleniti magnam.
+  </div>
+  -->
+  <!--ngClass è una direttiva che permette di definire un oggetto pieno di classi associate a valori booleani, i suddetti valori mostrano la classe associata solo se pari a true-->
+  <!--<div
+  (mouseover)="success = !success"
+  [ngClass]="{'alert':true, 'alert-danger':!success, 'alert-success':success}"
+  >
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quisquam soluta error consequuntur quod rem, veniam deleniti sapiente illum. Nam dolorem modi id perspiciatis cumque recusandae voluptate facilis deleniti magnam.
+  </div> -->
+  
+  <!--
+    red è un valore, quindi si usano anche gli apici singoli
+    [style.background-color]="'red'"
+  -->
+  <!--<div [style.background-color]="'red'">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </div>-->
+  
+  <!--
+    NG STYLE NON è E NON DEVE ESSERE UN SOSTITUTO DEL CSS/SCSS
+  -->
+  <!--<div
+  (click)="color = 'green'"
+  [ngStyle]="{
+    'background-color':'yellow',
+    'color':color
+  }">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </div>-->
+
+<!-- STYLE-CLASS.COMPONENT.TS -->  
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-style-class',
+  templateUrl: './style-class.component.html',
+  styleUrls: ['./style-class.component.scss']
+})
+export class StyleClassComponent {
+
+  success:boolean = false;
+  color:string = 'red';
+
+}
