@@ -20,6 +20,7 @@ export class User {
 
 {{counter}}
 -->
+
 <!-- ATTR.COMPONENT.TS -->
 
 import { Component } from '@angular/core';
@@ -71,6 +72,7 @@ export class AttrComponent {
 <!--form con proprietà indipendenti-->
 
 <!-- 
+
 <form>
 
     <input type="text" name="nome" [(ngModel)]="nome">
@@ -79,17 +81,20 @@ export class AttrComponent {
 </form>
   
   {{nome}}
-  <hr>
+
 -->
 
 <!-- 
+
  <form>
   
     <input type="text" name="nome" [(ngModel)]="user.nome">
     <input type="text" name="cognome" [(ngModel)]="user.cognome">
   
 </form> 
--->  
+
+-->
+
   <!--form con proprietà derivanti da un oggetto-->
 
   <!--converto l'oggetto in json così da poterlo vedere in formato stringa-->
@@ -118,34 +123,42 @@ export class FormComponent {
 <!-- PROP -->
 
 <!-- Pulsante mostra nascondi -->
+
 <!--
 
   (click)="toggle()" è a tutti gli effetti un event listener
 
   $event permette di registrare info sull'evento fornendo un oggetto Event al metodo toggle
+
 -->
+
 <!-- 
+
  <button
 (click)="toggle($event)"
 [innerText]="visibile ? 'Nascondi' : 'Mostra'"
 class="btn btn-success"
 ></button> 
+
 -->
 
 <!--stesso pulsante ma senza metodo al click-->
 <!--[innerText]="visibile ? 'Nascondi' : 'Mostra'" => è un ternario che definisce quale valore assegnare alla prop innerText-->
 
 <!-- 
+
   <button
 (click)="visibile = !visibile"
 [innerText]="visibile ? 'Nascondi' : 'Mostra'"
 class="btn btn-success"
 ></button>
+
 -->
 
 <!-- ngif distrugge l'elemento a cui è assegnato se riceve un bool false-->
 
 <!--
+
   <p *ngIf="visibile">
   Elemento 1
 </p>
@@ -181,6 +194,7 @@ export class PropComponent {
 <!-- STYLE -->
 
 <!--
+
   La classe alert-success appare solo se la proprietà success == true
   [class.alert-success]="success" 
   <div class="alert"
@@ -190,19 +204,24 @@ export class PropComponent {
   >
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quisquam soluta error consequuntur quod rem, veniam deleniti sapiente illum. Nam dolorem modi id perspiciatis cumque recusandae voluptate facilis deleniti magnam.
   </div>
-  -->
+
+-->
+
   <!--ngClass è una direttiva che permette di definire un oggetto pieno di classi associate a valori booleani, i suddetti valori mostrano la classe associata solo se pari a true-->
+  
   <!--<div
   (mouseover)="success = !success"
   [ngClass]="{'alert':true, 'alert-danger':!success, 'alert-success':success}"
   >
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam quisquam soluta error consequuntur quod rem, veniam deleniti sapiente illum. Nam dolorem modi id perspiciatis cumque recusandae voluptate facilis deleniti magnam.
-  </div> -->
+  </div> 
+  -->
   
   <!--
     red è un valore, quindi si usano anche gli apici singoli
     [style.background-color]="'red'"
   -->
+  
   <!--<div [style.background-color]="'red'">
     Lorem ipsum dolor sit amet consectetur adipisicing elit.
   </div>-->
