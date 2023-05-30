@@ -1,0 +1,42 @@
+
+COSA FARE :
+
+1- Dopo aver generato i file, le cartelle, inserito bootstrap etc... nella cartella "app", aprire il terminale e inserire : mg g c "nome del componente"
+
+2- Creare la cartella "Models" per le classi => ng g class Models/Post
+
+3- Andare in app-routing, nello specifico su "ROUTES" dove inserire gli oggetti formattati in una certa maniera:
+
+    - inserire path: '',
+    - inserire component: "nome del component"
+    - import del component in alto sotto gli altri import
+
+4- In app.component.html inserire <router-outlet></router-outlet> (è possibile inserire altri tag all'interno della pagina)
+
+5- Inserire i vari header, footer, etc.. nei rispettivi component/cartelle
+
+6- Prendiamo ad esempio l'header: 
+    - nei vari <li> rimuovere l'href e inserire accanto ad a : [routerLink]= "['/esempio']"
+
+7- Tutti i file accessori, vanno messi in assets dove sono più facili da raggiunge
+
+8- Nel file presente in "Models" fare l'export dell'eventuale classe creata
+
+9- Nel service.ts presente in app:
+    - fare l'export
+    - inserire apiUrl 
+    - costruttore + modulo
+
+10- In uno dei file da noi creati (es.header, home... - .ts) fare l'export della classe del component:
+    ESEMPIO:
+
+    export class ActivePostComponent{
+        postSArray: Post[] = [];
+
+        constructor(private postSvc:PostService){
+            
+        }
+    }
+
+???
+    
