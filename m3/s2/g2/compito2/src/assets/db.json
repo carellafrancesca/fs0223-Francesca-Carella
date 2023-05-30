@@ -1,0 +1,27 @@
+[
+  {
+    "nome": "Francesca",
+    "cognome": "Carella",
+    "città": "Ostuni"
+  },
+  {
+    "nome": "Mario",
+    "cognome": "Rossi",
+    "città": "Milano"
+  },
+  {
+    "nome": "Maria",
+    "cognome": "Rosa",
+    "città": "Roma"
+  },
+  {
+    "nome": "Luca",
+    "cognome": "Rossi",
+    "città": "Palermo"
+  },
+  {
+    "nome": "Giuseppe",
+    "cognome": "Grassi",
+    "città": "Brescia"
+  }
+]
