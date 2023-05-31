@@ -22,7 +22,7 @@ COSA FARE :
 
 8- Nel file presente in "Models" fare l'export dell'eventuale classe creata
 
-9- Nel service.ts presente in app:
+9- Nel esempio.service.ts presente in app:
     - fare l'export
     - inserire apiUrl 
     - costruttore + modulo
@@ -30,13 +30,68 @@ COSA FARE :
 10- In uno dei file da noi creati (es.header, home... - .ts) fare l'export della classe del component:
     ESEMPIO:
 
-    export class ActivePostComponent{
-        postSArray: Post[] = [];
-
-        constructor(private postSvc:PostService){
-            
-        }
+    import { Component } from '@angular/core';
+    import { Post } from 'src/app/Models/post';
+    import { PostService } from 'src/app/post.service';
+    
+    @Component({
+      selector: 'app-inactive-posts',
+      templateUrl: './inactive-posts.component.html',
+      styleUrls: ['./inactive-posts.component.scss']
+    })
+    export class InactivePostsComponent {
+    
+      postArray: Post[] = [];
+    
+      constructor(private postSvc:PostService){
+    
+        this.postSvc.getPosts().then(post => {
+          //una volta ricevuti i post dal server, vado a filtrare, ottenendo un array contenente i soli post con la proprietà active != true
+          let postFiltrati = post.filter(p => !p.active);
+    
+          this.postArray = postFiltrati
+        })
+    
+      }
+    
     }
 
-???
+    import { Component } from '@angular/core';
+    import { Post } from 'src/app/Models/post';
+    import { PostService } from 'src/app/post.service';
+
+    @Component({
+    selector: 'app-inactive-posts',
+    templateUrl: './inactive-posts.component.html',
+    styleUrls: ['./inactive-posts.component.scss']
+    })
+    export class InactivePostsComponent {
+
+    postArray: Post[] = [];
+
+    constructor(private postSvc:PostService){
+
+        this.postSvc.getPosts().then(post => {
+        //una volta ricevuti i post dal server, vado a filtrare, ottenendo un array contenente i soli post con la proprietà active != true
+        let postFiltrati = post.filter(p => !p.active);
+
+        this.postArray = postFiltrati
+        })
+
+    }
+
+    }
+
+11- Lavorare sull'HTML dei rispettivi "Active/Inactive Post"
+    ESEMPIO:
+          
+        <table class="table">
+
+            <tr *ngFor="let post of postArray">
+            <td>{{ post.id }}</td>
+            <td>{{ post.title }}</td>
+            <td>{{ post.active }}</td>
+            </tr>
+        
+        </table>
     
