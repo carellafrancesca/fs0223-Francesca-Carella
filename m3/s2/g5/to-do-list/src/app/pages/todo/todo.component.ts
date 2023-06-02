@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ITodos } from 'src/app/Iterfaces/todos';
+import { TodosService } from 'src/app/Services/todos.service';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.scss']
 })
-export class TodoComponent {
+export class TodoComponent implements OnInit{
 
+  todos:ITodos[] = [];
+
+  constructor(private todoSvc:TodosService){}
+
+  ngOnInit(){
+    this.getToDo();
+  }
+
+  getToDo(){
+    this.todoSvc.getToDo().then(todosResponse =>{
+      this.todos = todosResponse;
+    })
+  }
 }
