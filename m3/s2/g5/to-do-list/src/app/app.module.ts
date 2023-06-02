@@ -10,6 +10,7 @@ import { NavbarComponent } from './elements/navbar/navbar.component';
 import { TodoComponent } from './pages/todo/todo.component';
 import { CompletedComponent } from './pages/completed/completed.component';
 import { HomepageComponent } from './elements/homepage/homepage.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomepageComponent } from './elements/homepage/homepage.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

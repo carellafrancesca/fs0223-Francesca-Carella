@@ -1,27 +1,29 @@
-{"todos": [
-  {
-    "id": 1,
-    "title": "Fare l'esercizio",
-    "completed": true
-  },
-  {
-  "id": 2,
-  "title": "Completare l'esercizio",
-  "completed": false
-  },
-  {
-  "id": 3,
-  "title": "Consegnare l'esercizio",
-  "completed": false
-  },
-  {
-  "id": 4,
-  "title": "Guardare la lezione",
-  "completed": true
-  },
-  {
-    "id": 5,
-    "title": "Prendere appunti lezione",
-    "completed": false
-  }
-]}
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Fare l'esercizio",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "title": "Completare l'esercizio",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Consegnare l'esercizio",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Guardare la lezione",
+      "completed": true
+    },
+    {
+      "id": 5,
+      "title": "Prendere appunti lezione",
+      "completed": false
+    }
+  ]
+}

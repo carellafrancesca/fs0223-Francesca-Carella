@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITodos } from 'src/app/Iterfaces/todos';
 import { TodosService } from 'src/app/Services/todos.service';
+import { Todos } from 'src/app/Services/todos';
 
 @Component({
   selector: 'app-todo',
@@ -10,6 +11,7 @@ import { TodosService } from 'src/app/Services/todos.service';
 export class TodoComponent implements OnInit{
 
   todos:ITodos[] = [];
+  element:Todos = new Todos('', false)
 
   constructor(private todoSvc:TodosService){}
 
@@ -17,14 +19,20 @@ export class TodoComponent implements OnInit{
     this.getToDo();
   }
 
-  /*
   deleteToDo(id?:number){
     this.todoSvc.deleteToDo(id)
     .then(res => {
       console.log('Elemento Eliminato');
       this.getToDo();
     })
-  }*/
+  }
+
+  create(){
+    this.todoSvc.addToDo(this.element)
+    .then((res) => {
+      this.getToDo();
+    })
+  }
 
   getToDo(){
     this.todoSvc.getToDo().then(todosResponse =>{
