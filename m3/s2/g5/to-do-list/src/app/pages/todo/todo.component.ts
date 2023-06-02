@@ -34,6 +34,13 @@ export class TodoComponent implements OnInit{
     })
   }
 
+  completed(element:ITodos){
+    if(element.completed == false){
+      element.completed = true
+      this.todoSvc.updateToDo(element).then(res => this.getToDo())
+    }
+  }
+
   getToDo(){
     this.todoSvc.getToDo().then(todosResponse =>{
       this.todos = todosResponse;

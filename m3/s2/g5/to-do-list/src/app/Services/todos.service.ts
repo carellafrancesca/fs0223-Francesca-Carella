@@ -34,6 +34,6 @@ export class TodosService {
     return fetch(this.apiJson+'/'+ id,{
       method:'DELETE',
     }).then(response => response.json());
-  } //DA AGGIUNGERE EVENTUALMENTE ANCHE A COMPLETE
+  }
 
 }
