@@ -22,6 +22,18 @@ export class TodosService {
     }).then(response => response.json());
   }
 
+  updateToDo(todos:ITodos){
+    return fetch(this.apiJson+'/'+ todos.id,{
+      method:'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(todos)
+    }).then(response => response.json());
+  }
 
+  deleteToDo(id:number = 0){
+    return fetch(this.apiJson+'/'+ id,{
+      method:'DELETE',
+    }).then(response => response.json());
+  } //DA AGGIUNGERE EVENTUALMENTE ANCHE A COMPLETE
 
 }

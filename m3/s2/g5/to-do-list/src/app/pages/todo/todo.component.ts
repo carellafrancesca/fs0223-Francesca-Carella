@@ -17,6 +17,15 @@ export class TodoComponent implements OnInit{
     this.getToDo();
   }
 
+  /*
+  deleteToDo(id?:number){
+    this.todoSvc.deleteToDo(id)
+    .then(res => {
+      console.log('Elemento Eliminato');
+      this.getToDo();
+    })
+  }*/
+
   getToDo(){
     this.todoSvc.getToDo().then(todosResponse =>{
       this.todos = todosResponse;

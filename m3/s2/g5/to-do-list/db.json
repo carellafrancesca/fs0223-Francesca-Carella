@@ -16,7 +16,12 @@
   },
   {
   "id": 4,
-  "title": "Consegnare l'esercizio",
+  "title": "Guardare la lezione",
   "completed": true
+  },
+  {
+    "id": 5,
+    "title": "Prendere appunti lezione",
+    "completed": false
   }
 ]}
