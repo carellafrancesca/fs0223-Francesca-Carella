@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Todos } from '../Services/todos';
 import { TodosService } from '../Services/todos.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit',
@@ -12,7 +13,10 @@ export class EditComponent{
 
   element:Todos = new Todos('', false)
 
-  constructor(private todoSvc:TodosService, private router:ActivatedRoute){}
+  constructor(
+    private todoSvc:TodosService,
+    private router:ActivatedRoute,
+    private location:Location){}
 
   ngOnInit(){
     this.router.params
@@ -26,7 +30,10 @@ export class EditComponent{
 
   update(){
     this.todoSvc.updateToDo(this.element)
-    .then(res => console.log(res))
+    .then(res => this.backToDo())
   }
 
+  backToDo(){
+    this.location.back()
+  }
 }
