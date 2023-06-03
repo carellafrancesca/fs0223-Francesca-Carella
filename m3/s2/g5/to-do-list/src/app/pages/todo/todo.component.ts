@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ITodos } from 'src/app/Iterfaces/todos';
 import { TodosService } from 'src/app/Services/todos.service';
 import { Todos } from 'src/app/Services/todos';
@@ -14,7 +15,7 @@ export class TodoComponent implements OnInit{
   loading:boolean = true;
   element:Todos = new Todos('', false)
 
-  constructor(private todoSvc:TodosService){}
+  constructor(private todoSvc:TodosService, private router:Router){}
 
   ngOnInit(){
     this.getToDo();

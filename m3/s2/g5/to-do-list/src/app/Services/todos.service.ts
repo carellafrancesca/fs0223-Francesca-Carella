@@ -14,6 +14,10 @@ export class TodosService {
     return fetch(this.apiJson).then(response => response.json());
   }
 
+  getElementoSingolo(id:number):Promise<ITodos>{
+    return fetch(this.apiJson+'/'+id).then(response => response.json());
+  }
+
   addToDo(todos:ITodos):Promise<ITodos>{
     return fetch(this.apiJson,{
       method:'post',

@@ -11,6 +11,7 @@ import { TodoComponent } from './pages/todo/todo.component';
 import { CompletedComponent } from './pages/completed/completed.component';
 import { HomepageComponent } from './elements/homepage/homepage.component';
 import { FormsModule } from '@angular/forms';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     TodoComponent,
     CompletedComponent,
-    HomepageComponent
+    HomepageComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
