@@ -24,6 +24,11 @@
       "id": 5,
       "title": "Prendere appunti lezione",
       "completed": false
+    },
+    {
+      "title": "Completare to-do list",
+      "completed": false,
+      "id": 6
     }
   ]
 }

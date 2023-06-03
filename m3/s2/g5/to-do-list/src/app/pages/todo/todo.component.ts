@@ -11,6 +11,7 @@ import { Todos } from 'src/app/Services/todos';
 export class TodoComponent implements OnInit{
 
   todos:ITodos[] = [];
+  loading:boolean = true;
   element:Todos = new Todos('', false)
 
   constructor(private todoSvc:TodosService){}
@@ -44,6 +45,7 @@ export class TodoComponent implements OnInit{
   getToDo(){
     this.todoSvc.getToDo().then(todosResponse =>{
       this.todos = todosResponse;
+      this.loading = false;
     })
   }
 }

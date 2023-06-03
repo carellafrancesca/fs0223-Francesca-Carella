@@ -6,6 +6,9 @@
   </form>
 </div>
 
+<div *ngIf="loading" class="elementLoading">Loading...</div>
+<div *ngIf="todos.length == 0 && !loading">Non ci sono cose da fare</div>
+
 <div *ngFor="let elemento of todos">
 
   <div *ngIf="elemento.completed == false" class="elementiLista">

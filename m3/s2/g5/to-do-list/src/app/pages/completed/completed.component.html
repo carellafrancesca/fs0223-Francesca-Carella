@@ -1,3 +1,5 @@
+<div *ngIf="loading" class="elementLoading">Loading...</div>
+
 <div *ngFor="let elemento of todos">
 
   <div *ngIf="elemento.completed == true" class="elementiLista">
