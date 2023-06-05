@@ -8,7 +8,7 @@ import { Photos } from '../model/photos';
 export class PhotosService {
 
   apiUrl:string = 'https://jsonplaceholder.typicode.com/photos'
-  private likedPhoto: number[] = [];
+  //private likedPhoto: number[] = [];
 
   constructor(private http: HttpClient) {}
 
