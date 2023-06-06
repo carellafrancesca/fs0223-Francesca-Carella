@@ -12,11 +12,15 @@ export class PhotosService {
   constructor(private http: HttpClient) {}
 
   getPhotos(){
-    return this.http.get<Photos[]>(this.apiUrl).pipe(map(p => {
-      if (i <= 10){
-        return p
-      }
-    }));
+    return this.http.get<Photos[]>(this.apiUrl).pipe(map(p => {}));
+  }
+
+  post(photo:Photos){
+    return this.http.post<Photos>(this.apiUrl,photo)
+  }
+
+  put(photo:Photos){
+    return this.http.put<Photos>(this.apiUrl + '/', photo)
   }
 
   deletePhotos(id:number){

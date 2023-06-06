@@ -14,14 +14,10 @@ export class PhotoInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
-    if(request.method === 'GET'){
-      console.log('hai fatto una richiesta get');
-    }
-
     const newReq = request.clone({
       headers: request.headers
-      .append('Auth','secretId')
-      .append('firma','xyz')
+      .append('Authorization','id')
+      .append('Firma','xyz')
     })
     return next.handle(newReq);
   }

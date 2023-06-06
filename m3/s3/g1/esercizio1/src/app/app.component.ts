@@ -10,18 +10,14 @@ import { PhotosService } from './services/photos.service';
 export class AppComponent {
   title = 'esercizio1';
 
-  constructor(private photosSvc:PhotosService){}
+  constructor(private photosSvc:Photos){}
 
   photoArr:Photos[] = [];
 
   ngOnInit(): void {
-
     this.photosSvc.getPhotos().subscribe(res => {
       this.photoArr = res;
     })
-
-
-
   }
 
 }
