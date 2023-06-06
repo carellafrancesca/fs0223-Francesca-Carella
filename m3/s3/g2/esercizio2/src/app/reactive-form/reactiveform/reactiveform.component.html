@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Crea un Supereroe</h1>
+  <form (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="name">Name *</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required>
+    </div>
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego *</label>
+      <input type="text" class="form-control" id="alterEgo" formControlName="alterEgo" required>
+    </div>
+    <div class="form-group">
+      <label for="power">Power *</label>
+      <select class="form-control" id="power" formControlName="power" required>
+        <option value=""></option>
+        <option value="super strength">Super Strength</option>
+        <option value="flight">Flight</option>
+        <option value="teleportation">Teleportation</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="enemy">Enemy (Max 10 characters)</label>
+      <input type="text" class="form-control" id="enemy" formControlName="enemy" maxlength="10">
+    </div>
+    <div class="form-group">
+      <label for="planet">Planet *</label>
+      <input type="text" class="form-control" id="planet" formControlName="planet" required minlength="5">
+    </div>
+    <div class="form-group">
+      <label for="weakness">Weakness (optional)</label>
+      <input type="text" class="form-control" id="weakness" formControlName="weakness">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+  </form>
+</div>
+

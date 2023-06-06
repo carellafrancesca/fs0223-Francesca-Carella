@@ -8,12 +8,15 @@ import { Photos } from '../model/photos';
 export class PhotosService {
 
   apiUrl:string = 'https://jsonplaceholder.typicode.com/photos'
-  //private likedPhoto: number[] = [];
 
   constructor(private http: HttpClient) {}
 
   getPhotos(){
-    return this.http.get<Photos[]>(this.apiUrl);
+    return this.http.get<Photos[]>(this.apiUrl).pipe(map(p => {
+      if (i <= 10){
+        return p
+      }
+    }));
   }
 
   deletePhotos(id:number){
