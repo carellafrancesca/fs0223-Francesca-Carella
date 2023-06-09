@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./page/auth/auth.module').then(m => m.AuthModule) },
   {
     path: 'homepage',
-    loadChildren: () => import('./page/homepage/homepage.module').then(m => m.HomepageModule),
+    loadChildren: () => import('./page/homepage/homepage-routing.module').then(m => m.HomepageRoutingModule),
     canActivate: [AuthGuard]
   }
 ];

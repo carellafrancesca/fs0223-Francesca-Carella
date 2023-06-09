@@ -19,11 +19,11 @@ export class LoginComponent {
     password: ''
   }
 
-  login(){
-    this.authSvc.login(this.data)
-    .subscribe(AccessInfo =>{
-      alert(`Sei loggato come ${AccessInfo.user.name}`)
-    })
+  login() {
+    console.log(this.data);
+    this.authSvc.login(this.data).subscribe((AccessInfo: AccessInfo) => {
+      alert(`Sei loggato come ${AccessInfo.user.name}`);
+    });
   }
 
 }
