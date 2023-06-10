@@ -10,7 +10,6 @@ import { EditBookComponent } from './page/homepage/edit-book/edit-book.component
 @NgModule({
   declarations: [
     AppComponent,
-    EditBookComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IBook } from '../ibooks';
 import { BooksService } from '../books.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { IBook } from '../ibooks';
 
 @Component({
   selector: 'app-edit-book',
@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EditBookComponent {
 
-  pizza:Partial<IBook> = {
+  book:Partial<IBook> = {
     titolo:'',
     prezzo:0
   }
@@ -19,15 +19,13 @@ export class EditBookComponent {
     private bookSvc:BooksService,
     private router:Router,
     private route:ActivatedRoute
-    ){}
+  ){}
 
   ngOnInit(){
-
     this.route.params
     .subscribe((params:any)=>{
-
       this.bookSvc.getById(params.id).subscribe((book)=>{
-          this.book = book
+        this.book = book
       })
     })
   }

@@ -20,15 +20,15 @@ export class BooksService {
   }
 
   getById(id:number){
-    return this.http.get<IBook[]>(`${this.apiUrl}/${id}`);
+    return this.http.get<IBook>(`${this.apiUrl}/${id}`);
   }
 
-  post(data:Partial<IBook[]>){
-    return this.http.post<IBook[]>(`${this.apiUrl}`,data);
+  post(data:Partial<IBook>){
+    return this.http.post<IBook>(`${this.apiUrl}`,data);
   }
 
-  put(data:Partial<IBook[]>){
-    return this.http.put<IBook[]>(`${this.apiUrl}/${data.id}`,data);
+  put(data:Partial<IBook>){
+    return this.http.put<IBook>(`${this.apiUrl}/${data.id}`,data);
   }
 
   delete(id:number){

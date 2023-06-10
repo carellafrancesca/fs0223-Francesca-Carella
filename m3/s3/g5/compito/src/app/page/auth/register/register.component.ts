@@ -1,7 +1,7 @@
-import { AccessInfo } from './../interfaces/access-info';
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Register } from '../interfaces/register';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +11,8 @@ import { Register } from '../interfaces/register';
 export class RegisterComponent {
 
   constructor(
-    private authSvc: AuthService
+    private authSvc: AuthService,
+    private router: Router
   ){}
 
   data:Register = {
@@ -23,8 +24,8 @@ export class RegisterComponent {
 
   register(){
     this.authSvc.signUp(this.data)
-    .subscribe(AccessInfo => {
-      alert(AccessInfo.user.name)
+    .subscribe(accessData => {
+      this.router.navigate(['auth/login'])
     })
   }
 

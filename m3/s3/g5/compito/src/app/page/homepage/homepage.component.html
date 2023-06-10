@@ -1,16 +1,16 @@
 <form>
   <input type="text" class="form-control" name="gusto" [(ngModel)]="newBook.titolo">
   <input type="number" class="form-control" name="prezzo" [(ngModel)]="newBook.prezzo">
-  <button class="btn btn-primary" (click)="create()">Aggiungi pizza</button>
+  <button class="btn btn-dark m-4" (click)="create()">Aggiungi Libro</button>
 </form>
 
 <table class="table mt-5">
-  <tr *ngFor="let book of books">
-    <td>{{books.titolo}}</td>
-    <td>{{books.prezzo}} €</td>
+  <tr *ngFor="let book of booksArr">
+    <td>{{book.titolo}}</td>
+    <td>{{book.prezzo}} €</td>
     <td>
-      <button class="btn btn-warning" [routerLink]="['/homepage','edit',books.id]">Modifica</button>
-      <button class="btn btn-danger" (click)="delete(books.id)">Delete</button>
+      <button class="btn btn-warning" [routerLink]="['/homepage','edit',book.id]">Modifica</button>
+      <button class="btn btn-danger" (click)="delete(book.id)">Delete</button>
     </td>
   </tr>
 </table>

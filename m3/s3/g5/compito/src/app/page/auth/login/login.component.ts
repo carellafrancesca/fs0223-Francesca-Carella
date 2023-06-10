@@ -1,4 +1,3 @@
-import { AccessInfo } from './../interfaces/access-info';
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Login } from '../interfaces/login';
@@ -24,7 +23,7 @@ export class LoginComponent {
   login(){
     this.authSvc.login(this.data)
     .subscribe(accessData => {
-        this.router.navigate(['/dashboard'])
+        this.router.navigate(['/homepage'])
     })
   }
 

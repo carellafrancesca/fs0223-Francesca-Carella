@@ -9,7 +9,7 @@ import { BooksService } from './books.service';
 })
 export class HomepageComponent {
 
-  pizze:IBook[] = [];
+  booksArr:IBook[] = [];
 
   newBook:Partial<IBook> = {
     titolo:'',
@@ -19,26 +19,25 @@ export class HomepageComponent {
   constructor(private bookSvc:BooksService){}
 
   ngOnInit(){
-    this.bookSvc.getAll().subscribe((pizze)=>{
-      this.pizze = pizze;
+    this.bookSvc.getAll().subscribe((books)=>{
+      this.booksArr = books;
     })
   }
 
   create(){
     this.bookSvc.post(this.newBook)
     .subscribe(data=>{
-      this.pizze.push(data)
+      this.booksArr.push(data)
     })
   }
 
   delete(id:number){
     this.bookSvc.delete(id)
     .subscribe(data=>{
-      let index = this.book.findIndex(b => b.id == id)
-      this.pizze.splice(index,1)
+      let index = this.booksArr.findIndex(b => b.id == id)
+      this.booksArr.splice(index,1)
     })
   }
 
 }
 
-}
