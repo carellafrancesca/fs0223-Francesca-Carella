@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { BehaviorSubject, map, tap } from 'rxjs';
+import { BehaviorSubject, map, tap, catchError, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { AccessInfo } from './interfaces/access-info';
 import { Login } from './interfaces/login';
@@ -39,7 +39,9 @@ export class AuthService {
 
       const expDate = this.jwtHelper
       .getTokenExpirationDate(data.accessToken) as Date;
+      this.autoLogout(expDate)
     }),
+      catchError(this.errors)
     )
   }
 
@@ -56,7 +58,8 @@ export class AuthService {
   }
 
   signUp(data:Register){
-    return this.http.post<AccessInfo>(this.apiUrl + '/register', data);
+    return this.http.post<AccessInfo>(this.apiUrl + '/register', data)
+    .pipe(catchError(this.errors));
   }
 
   logout(){
@@ -75,5 +78,24 @@ export class AuthService {
     }, expMs)
   }
 
+  errors(err: any) {
+    switch (err.error) {
+        case "Email and Password are required":
+            return throwError('Email e password obbligatorie');
+            break;
+        case "Email already exists":
+            return throwError('Utente esistente');
+            break;
+        case 'Email format is invalid':
+            return throwError('Email scritta male');
+            break;
+        case 'Cannot find user':
+            return throwError('utente inesistente');
+            break;
+            default:
+        return throwError('Errore');
+            break;
+    }
+  }
 
 }

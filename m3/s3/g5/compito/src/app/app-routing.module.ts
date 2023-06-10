@@ -1,3 +1,4 @@
+import { HomepageModule } from './page/homepage/homepage.module';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { AuthGuard } from './page/auth.guard';
@@ -7,8 +8,8 @@ const routes: Routes = [
   { path: 'auth', loadChildren: () => import('./page/auth/auth.module').then(m => m.AuthModule) },
   {
     path: 'homepage',
-    loadChildren: () => import('./page/homepage/homepage-routing.module').then(m => m.HomepageRoutingModule),
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./page/homepage/homepage.module').then(m => m.HomepageModule)
   }
 ];
 

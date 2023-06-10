@@ -2,6 +2,7 @@ import { AccessInfo } from './../interfaces/access-info';
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Login } from '../interfaces/login';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,8 @@ import { Login } from '../interfaces/login';
 export class LoginComponent {
 
   constructor(
-    private authSvc: AuthService
+    private authSvc: AuthService,
+    private router: Router
   ){}
 
   data:Login = {
@@ -19,11 +21,11 @@ export class LoginComponent {
     password: ''
   }
 
-  login() {
-    console.log(this.data);
-    this.authSvc.login(this.data).subscribe((AccessInfo: AccessInfo) => {
-      alert(`Sei loggato come ${AccessInfo.user.name}`);
-    });
+  login(){
+    this.authSvc.login(this.data)
+    .subscribe(accessData => {
+        this.router.navigate(['/dashboard'])
+    })
   }
 
 }
