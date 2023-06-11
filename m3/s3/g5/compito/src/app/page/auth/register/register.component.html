@@ -1,8 +1,8 @@
-<form #registerform="ngForm">
+<form #loginform="ngForm">
   <input type="text" placeholder="Name:" name="name" [(ngModel)]="data.name" class="form-control m-2" required>
   <input type="text" placeholder="Surname:" name="surname" [(ngModel)]="data.surname" class="form-control m-2" required>
-  <input type="email" placeholder="Email:" name="email" [(ngModel)]="data.email" class="form-control m-2" required>
+  <input type="email" placeholder="Email:" name="email" [(ngModel)]="data.email" class="form-control m-2" required email>
   <input type="password" placeholder="Password:" name="password" [(ngModel)]="data.password" class="form-control m-2" required>
 
-  <button class="btn btn-dark m-2" (click)="register()">Registrati</button>
+  <button class="btn btn-dark m-2" type="submit" [disabled]="!loginform.valid" (click)="register()">Registrati:</button>
 </form>

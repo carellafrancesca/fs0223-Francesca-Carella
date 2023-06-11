@@ -1,19 +1,23 @@
 {
-  "posts": [
+  "user": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "email": "qifipes@mailinator.com",
+      "password": "$2a$10$FbmhY9DWNv.vwQ/JvWl9D.Ew8a7RejiYSSD8Xx6z/o9ZtpwZkz7wO",
+      "name": "Risa Rojas",
+      "surname": "Dickson",
+      "id": 1
     }
   ],
-  "comments": [
+  "books": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    "titolo": "Harry Potter",
+    "prezzo": 15,
+    "id": 2
+    },
+    {
+      "titolo": "Percy Jackson",
+      "prezzo": 12,
+      "id": 3
+      }
+  ]
 }
