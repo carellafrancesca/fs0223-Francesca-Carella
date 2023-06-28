@@ -38,8 +38,7 @@ public class esercizio_3 {
 	        }
 	        
         }
-        
-        
+              
 	}
 	
 	public static boolean stringaPariDispari(String nome) {
@@ -80,6 +79,12 @@ public class esercizio_3 {
 		}
 	}
 
-	
+	private static void countdown(){
+		System.out.println("Inserisci un numero");
+		int conteggio = Integer.parseInt(scan.nextLine());
+		for (int i = conteggio; i >= 0 ; i--) {
+        	System.out.println(i);
+        }
+	}
 	
 }
