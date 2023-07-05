@@ -1,0 +1,4 @@
+16:43:13.231 [Thread-0] INFO  com.esercizio2.Thread1 - Somma = 49719
+16:43:13.236 [Thread-1] INFO  com.esercizio2.Thread1 - Somma = 50548
+16:43:13.237 [Thread-2] INFO  com.esercizio2.Thread1 - Somma = 49971
+16:43:13.237 [main] INFO  com.esercizio2.Main_Project2 - Somma:150238
