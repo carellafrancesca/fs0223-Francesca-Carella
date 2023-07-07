@@ -1,12 +1,9 @@
 package com.progetto_settimanale;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,12 +12,10 @@ public class Main_Project {
 	
 	private static Logger logger = LoggerFactory.getLogger(Main_Project.class);
 	static List <Elemento_Generale> listaGenerale = new ArrayList<Elemento_Generale>();
-	private static File f = new File("doc/test.txt");
 	
-
 	public static void main(String[] args) {
 
-		deleteFile();
+
 		
 		Libri libro = new Libri("A1234B", "Harry Potter", 1997, 304, "J.K.Rowling", "Fantasy");
 		Libri libro1 = new Libri("C1248T", "Normal People", 2018, 240, "Sally Rooney", "Drama");
@@ -36,13 +31,6 @@ public class Main_Project {
 		listaGenerale.add(rivista1);
 		listaGenerale.add(rivista2);
 		listaGenerale.add(rivista3);
-		
-		writeFile(libro);
-		writeFile(libro1);
-		writeFile(libro2);
-		writeFile(rivista1);
-		writeFile(rivista2);
-		writeFile(rivista3);
 		
 		//stampaLista(listaGenerale);
 			
@@ -121,18 +109,5 @@ public class Main_Project {
 		    return;
 	}
 	 
-	//SALVATAGGIO SU UN DISCO DELL'ARCHIVIO
-	public static void writeFile (Elemento_Generale e) {
-		try {
-            FileUtils.writeStringToFile(f, f.toString() , "UTF-8", true);
-        } catch (IOException x) {
-            x.printStackTrace();
-        }
-	}
-	
-	public static void deleteFile(){
-        FileUtils.deleteQuietly(f);
-    }
-		
 
 }
