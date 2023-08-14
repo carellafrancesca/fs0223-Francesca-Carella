@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recap delle Basi di Javascript</title>
+
+    <style>
+        button {
+            display: block;
+        }
+
+        input{
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        </style>
+
+</head>
+<body>
+
+    <input type = "text" name="nome" placeholder="Nome Utente">
+    <button>Salutami!</button>
+    <h1>Nessun saluto</h1>
+
+    <input type = "text" name="numero" placeholder="Inserisci un numero" id="input2">
+    <button id="cubo">Calcola cubo!</button>
+    <h1 id="titolo">-</h1>
+
+    
+    <form >
+        <label for="fname">Nome:</label>
+        <input type="text" id="fname" name="fname">
+        <label for="lname">Cognome:</label>
+        <input type="text" id="lname" name="lname">
+        <input type="submit" value="Invia">
+    </form> 
+    <p></p>
+
+    <script>
+
+        let nome = 'Mario'; // Scope globale
+
+        // FUNZIONI 
+
+        function ciao(){
+            let cognome  = 'Rossi'; // Scope locale
+            console.log('Ciao' + ' ' + nome + ' ' + cognome);
+            hello(cognome);
+        }
+        
+        function hello(nome){
+            console.log('Hello' + ' ' + nome)
+        }
+        
+        ciao();
+
+        function generaTabella(){
+            generaHeader();
+            generaRighe();
+            generaFooter();
+
+            console.log("Tabella Generata!");
+        }
+
+        function generaHeader(){
+            console.log("Haeder Generato!");
+        };
+
+        function generaRighe(){
+            console.log("Righe Generate!");
+        };
+
+        function generaFooter(){
+            console.log("Footer Generato!");
+        };
+
+        generaTabella();
+        
+        /*const myButton = document.querySelector('button');  
+        myButton.onclick = function(){
+            alert('Hello!');
+        }*/ // FUNZIONE ANONIMA
+
+        let bottone = document.querySelector('button');
+        let titolo = document.querySelector('h1');
+        let nome2 = document.querySelector('input');
+
+        function salutami(nome2 = 'Utente'){ // Parametro di default
+            titolo.innerHTML = `Ciao ${nome2}`;
+        }
+
+        bottone.addEventListener('click', ()=>{
+            salutami(nome2.value);
+        })
+        
+        let button = document.querySelector('#cubo');
+        let title = document.querySelector('#titolo');
+        let numero = document.querySelector('#input2');
+
+        function cubo(numero){
+            let result = numero * numero * numero;
+            console.log(result);
+            return result;
+        }
+
+        button.addEventListener('click', ()=>{
+            //cubo(numero.value);
+            title.innerHTML = cubo(numero.value);
+        })
+
+        const form = document.querySelector('form');
+        const name = document.querySelector('fname');
+        const lastname = document.querySelector('lname');
+        const paragraph = document.querySelector('p');
+
+        form.onsubmit = function (e){
+            if(name.value === '' || lastname.value === ''){
+                e.preventDefault();
+                paragraph.textContent = "You need to fill in both";
+            }
+        }; // Funzione anonima
+
+        //name.addEventListener('focus', () => {
+            //console.log(e.targer.value);
+        //});
+
+
+    </script>
+
+</body>
+</html>
