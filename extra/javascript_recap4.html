@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recap delle Basi di Javascript</title>
+
+</head>
+<body>
+
+    <script>
+
+        // OGGETTI
+
+        const p1 = {
+            nome: "Francesca",
+            cognome: "Carella",
+            eta: 23,
+            genere: "Femmina",
+            interessi: ["Suonare", "Leggere", "Guardare film"],
+            indirizzo:{
+                via: "Piazza Roma",
+                cap: "12345",
+                provincia: "Mi",
+                citta: "Milano"
+            },
+            saluta: function(){
+                console.log(`Ciao sono ${p1.nome}`)
+            } 
+        }
+
+        //p1.nome = 'Sara'; // Per modificare i valori delle proprietà
+        p1.colorePreferito = 'blu'; // Per aggiungere una proprietà
+
+        //console.log(p1.interessi[2]);
+        //console.log(p1.indirizzo.cap);
+        //p1.saluta();
+        console.log(p1);
+        
+        // OOP
+
+        function Persona(nome, cognome, eta, genere, interessi){
+            this.nome = nome;
+            this.cognome = cognome;
+            this.eta = eta;
+            this.genere = genere;
+            this.interessi = interessi;
+            this.bio = function(){
+                console.log(`${this.nome} ${this.cognome}
+                è ${(this.genere == 'Maschio') ? 'un ragazzo' : 'una ragazza'} di ${this.eta} anni a cui piace ${this.interessi.join(', ')} `);
+            };
+            this.saluto = function(){
+                console.log(`Ciao sono ${this.nome}`);
+            };
+        }
+
+        const p2 = new Persona('Mario', 'Rossi', 25, 'Maschio', ['calcio', 'basket']); 
+        const p3 = new Persona('Lucia', 'Verdi', 29, 'Femmina', ['letteratura', 'musica', 'masterchef']);
+
+        console.log(p2);
+        console.log(p3);
+
+        p2.bio();
+        p3.bio();
+
+        function Person(nome, cognome, eta, genere, interessi){
+            this.nome = nome;
+            this.cognome = cognome;
+            this.eta = eta;
+            this.genere = genere;
+            this.interessi = interessi;
+            this.saluto = function(){
+                console.log(`Ciao sono ${this.nome}`);
+            };
+        }
+
+        function Insegnante(nome, cognome, eta, genere, interessi, materia){
+            Person.call(this, nome, cognome, eta, genere, interessi);
+
+            this.materia = materia;
+            this.saluto = function(){
+                console.log(`Buongiorno sono ${this.nome} ${this.cognome}`);
+            };
+        }
+
+        const insegnante1 = new Insegnante('Anna', 'Blu', 'Femmina', ['Netflix'], 'Storia');
+        console.log(insegnante1);
+        insegnante1.saluto();
+
+        // CLASSI
+
+        class Soggetto{
+            constructor(nome, cognome, eta, genere, interessi){
+            this.nome = nome;
+            this.cognome = cognome;
+            this.eta = eta;
+            this.genere = genere;
+            this.interessi = interessi;
+            }
+
+            saluta = function(){
+                console.log(`Ciao sono ${this.nome}`);
+            };
+
+        }
+
+        class Professore extends Soggetto {
+            constructor(nome, cognome, eta, genere, interessi, materia){
+                super(nome, cognome, eta, genere, interessi);
+
+                this.materia = materia;
+            }
+
+            get materia(){
+                return this._materia;
+            }
+
+            set materia(nuovaMateria){
+                this._materia = nuovaMateria;
+            }
+
+            riprendiAlunno(nomeAluunno){
+                console.log(`${nomeAlunno} non si mangia in classe!`);
+            }
+
+        }
+
+        const professore = new Professore('Anna', 'Blu', 'Femmina', ['Netflix'], 'Storia');
+        //professore.riprendiAlunno('Edoardo');
+        //console.log(professore);
+        professore.materia = 'Matematica';
+        console.log(professore.materia);
+
+
+    </script>
+
+</body>
+</html>
