@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recap delle Basi di Javascript</title>
+
+</head>
+<body>
+
+    <button id="date">Vai</button>
+    <button id="alert">Alert</button>
+
+    <button>Premi</button>
+    <p id="press"></p>
+
+    <script>
+
+      // ESEMPIO ASYNC SENZA FETCH
+
+      const btn = document.querySelector('#date');
+      const btnAlert = document.querySelector('#alert');
+        
+      btn.addEventListener('click', () => {
+        let myDate;
+        for(let i = 0; i < 10000; i++){
+            let date = new Date();
+            myDate = date;
+        }
+        // In ogni iterazione del ciclo, il valore dell'oggetto date (cioè la data e l'ora corrente) viene assegnato alla variabile myDate, sovrascrivendo il valore precedente. Tuttavia, poiché il ciclo viene eseguito così rapidamente, myDate conterrà infine la data e l'ora dell'ultima iterazione.
+
+        console.log(myDate);
+
+        let pElement = document.createElement('p');
+        pElement.textContent = 'This is a newly-added paragraph';
+        document.body.appendChild(pElement);
+
+      });   
+
+      btnAlert.addEventListener('click', () => {
+        console.log('Eccomi');
+      });
+
+    // SET TIMEOUT - INTERVAL
+
+    let prova = setTimeout(saluta, 5000);
+    
+    function saluta(){
+        alert('Ciao sono in timeout');
+    }
+
+    btn.addEventListener('click', () => {
+        clearTimeout(prova);
+    })  
+
+    function displayTime(){
+        let date = new Date();
+        let time = date.toLocaleTimeString();
+        document.getElementById('press').textContent = time;
+    }
+
+    const createClock = setInterval(displayTime, 1000);
+
+    // LE PROMISE
+
+    /*chooseToppings()
+        .then(toppings => {
+            return placeOrder(toppings);
+        })
+        .then(order => {
+            return collectOrder(order);
+        })
+        .then(pizza => eatPizza(pizza))
+        .catch(failureCallback);
+    */    
+    
+    function timeoutPromise(message,interval){
+        return new Promise((resolve, reject) => {
+            if (message === '' || typeof message !== 'string'){
+                reject("Message is empty or not a string");
+            } else if (interval < 0 || typeof interval !== 'number'){
+                reject('Interval is negative or not a number');
+            } else {
+                setTimeout(function (){
+                    resolve(message);
+                }, interval);
+            }
+        });
+    };
+
+    /* return new Promise((resolve, reject) => { ... });: Qui viene creata una nuova promise. All'interno del costruttore della promise, ci sono tre possibili percorsi:
+    Se message è una stringa non vuota e interval è un numero positivo, la promise verrà risolta dopo l'intervallo specificato con il messaggio come valore risolto.
+    Se message è vuoto o non è una stringa, o se interval è negativo o non è un numero, la promise verrà respinta con un messaggio di errore corrispondente.*/
+
+    // setTimeout(function() { resolve(message); }, interval);: Se la promise non è stata respinta nel blocco precedente, verrà avviato un ritardo utilizzando la funzione setTimeout. Questo ritardo è dato dall'interval specificato in millisecondi. Dopo che il ritardo è trascorso, la promise verrà risolta con il valore del message.
+
+    timeoutPromise('Hello there!', 1000)
+        .then(message => {
+            alert(message);
+        })
+        .catch(e => {
+            console.log('Error' + e)
+        });
+
+
+
+    // ASYNCH - AWAIT    
+
+    async function hello(){
+        return "Hello";
+    }
+    //let test = async () => {return "Hello"} - (Sconsigliato)
+
+    async function hello(){
+        return greeting = await Promise.resolve("Hello");
+    }
+    
+    hello().then(console.log);
+
+    async function myFetch(){
+        try {
+            let response = await fetch ("https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG");
+            let myBlob = await responde.blob();
+
+            let objectUrl = URL.createObjectURL(myBlob);
+            let image = document.createElement("img");
+            imagre.src = objectUrl;
+            document.body.appendChild(image);
+        }catch (e){
+            console.log("There has been a problem with your fetch operation: " + e.message);
+        }
+    }
+   
+    myFetch();
+
+    // MANIPOLARE IL DOM
+
+    /*
+    - getElementById;
+    - querySelector;
+    - querySelectorAll;
+    - getElementByClassName;
+    */
+
+    
+
+
+
+
+    </script>
+
+</body>
+</html>
