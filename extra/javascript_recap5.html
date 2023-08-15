@@ -15,6 +15,8 @@
     <button>Premi</button>
     <p id="press"></p>
 
+    <div></div>
+
     <script>
 
       // ESEMPIO ASYNC SENZA FETCH
@@ -136,16 +138,28 @@
 
     // MANIPOLARE IL DOM
 
-    /*
+    /* PRENDERE ELEMENTI
     - getElementById;
     - querySelector;
     - querySelectorAll;
     - getElementByClassName;
     */
 
-    
+    // CREARE NUOVI NODI
 
+    const div = document.querySelector('div');
+    const paragrafo = document.createElement('p');
+    paragrafo.textContent = "Elemento creato dinamicamente";
 
+    const extraTesto = document.createTextNode("Altra parte di testo come node");
+    paragrafo.appendChild(extraTesto);
+
+    // SPOSTARE E RIMUOVERE I NODI
+    //document.body.appendChild(paragrafo);
+    //paragrafo.removeChild(extraTesto);
+    //extraTesto.remove();
+
+    // AGGIUNGERE ATTRIBUTI con setAttribute
 
 
     </script>
