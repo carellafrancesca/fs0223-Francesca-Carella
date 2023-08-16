@@ -38,3 +38,9 @@
   </li>
 </ul>
 
+<ul class="online_offline">
+  <li *ngFor="let persona of persone">
+    <div class="cerchio" [ngClass]="{'cerchioOnline': persona.isOnline, 'cerchioOffline': !persona.isOnline}"></div>
+    <p>{{persona.nome}} {{persona.cognome}}</p>
+  </li>
+</ul>
