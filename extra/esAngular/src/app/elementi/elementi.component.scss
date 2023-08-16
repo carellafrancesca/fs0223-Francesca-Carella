@@ -1,0 +1,40 @@
+.example-full-width {
+  margin-left: 30px;
+}
+
+.online{
+  margin-left: 20px;
+  display: flex;
+  .cerchioverde{
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 100%;
+  }
+  .cerchiorosso{
+  width: 20px;
+  height: 20px;
+  background-color:red;
+  border-radius: 100%;
+  }
+  .nomi{
+    margin-left: 5px;
+  }
+}
+
+.list{
+  li{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+  li p{
+    margin-bottom: 0;
+    margin-left: 5px;
+  }
+  .cerchio{
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  }
+}

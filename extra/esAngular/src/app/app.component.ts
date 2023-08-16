@@ -7,16 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'esAngular';
-  isVisible = true;
-
-  onClick(event: Event){
-    this.title = "Ho cliccato sul bottone."
-  };
-
-  onInput(event: Event){
-    console.log( (<HTMLInputElement>event.target).value )
-  };
-
-
 
 }

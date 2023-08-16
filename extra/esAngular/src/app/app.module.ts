@@ -11,11 +11,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
+import { ElementiComponent } from './elementi/elementi.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProvaComponent
+    ProvaComponent,
+    ElementiComponent
   ],
   imports: [
     BrowserModule,
