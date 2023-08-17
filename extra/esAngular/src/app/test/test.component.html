@@ -1,0 +1,5 @@
+<h1>Lista Contatti:</h1>
+<div *ngFor="let utente of utenti; index as i">
+  <a routerLink="/Test/{{ i }}" style="margin-left: 10px;">{{utente.nome}} {{utente.cognome}}</a>
+</div>
+<router-outlet></router-outlet>

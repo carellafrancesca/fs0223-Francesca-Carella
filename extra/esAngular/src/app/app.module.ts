@@ -12,12 +12,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import { ElementiComponent } from './elementi/elementi.component';
+import { TestComponent } from './test/test.component';
+import { ContattoSingoloComponent } from './contatto-singolo/contatto-singolo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProvaComponent,
     ElementiComponent,
+    TestComponent,
+    ContattoSingoloComponent,
   ],
   imports: [
     BrowserModule,

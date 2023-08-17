@@ -9,6 +9,8 @@ export class ProvaComponent implements OnInit, AfterViewInit{
 
   @ViewChild('inputSaluti') inputSaluti!: ElementRef<HTMLInputElement>// Anche :any va bene, ma è troppo generico
 
+  numero = 15;
+
   constructor(){
     console.log("Costruttore");
   }
