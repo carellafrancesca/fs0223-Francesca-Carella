@@ -12,12 +12,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import { ElementiComponent } from './elementi/elementi.component';
+import { HighlightDirective } from './direttive/highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProvaComponent,
-    ElementiComponent
+    ElementiComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
