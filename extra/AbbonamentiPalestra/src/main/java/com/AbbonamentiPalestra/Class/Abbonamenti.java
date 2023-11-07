@@ -1,4 +1,4 @@
-package com.Classi;
+package com.AbbonamentiPalestra.Class;
 
 import java.time.LocalDate;
 
@@ -12,8 +12,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,26 +21,29 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "Abbonamenti")
-public class Abbonamento {
+public class Abbonamenti {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Temporal(TemporalType.DATE)
-	private LocalDate rilascioAbbonamento;
-	@Temporal(TemporalType.DATE)
-	private LocalDate dataScadenza;
+	@Column(nullable = false, columnDefinition = "DATE")
+	protected LocalDate dataDiIscrizione;
+	@Column(nullable = false, columnDefinition = "DATE")
+	protected LocalDate dataDiScadenza;
+	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "tipo_abbonamento")
-	private TipologieAbbonamento tipo;
+    private TipoAttivita attivita;
+	
+	@Enumerated(EnumType.STRING)
+    private TipoAbbonamento tipo;
 	
 	public double getPrezzo() {
-        return tipo.getPrezzo();
-    }
+	   return tipo.getPrezzo();
+	}
 	
     @OneToOne
-    @JoinColumn(name = "id_abbonato")
-    private Abbonato abbonato;
+    @JoinColumn(name = "abbonato_id")
+    private Abbonati abbonato;
 	
 }

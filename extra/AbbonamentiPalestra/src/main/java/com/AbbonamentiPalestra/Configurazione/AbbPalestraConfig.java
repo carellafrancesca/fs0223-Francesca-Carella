@@ -1,26 +1,27 @@
-package com.Configuration;
+package com.AbbonamentiPalestra.Configurazione;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 
-import com.Classi.Abbonamento;
-import com.Classi.Abbonato;
+import com.AbbonamentiPalestra.Class.Abbonamenti;
+import com.AbbonamentiPalestra.Class.Abbonati;
 
 @Configuration
 @PropertySource("classpath:application.properties")
-public class AbbonamentiConfig {
+public class AbbPalestraConfig {
 
-	@Bean("Abbonati")
+	@Bean("abbonati")
     @Scope("prototype")
-    public Abbonato abbonati() {
-        return new Abbonato();
+    public Abbonati abbonati() {
+        return new Abbonati();
     }
 	
-	@Bean("Abbonamenti")
+	@Bean("abbonamenti")
     @Scope("prototype")
-    public Abbonamento abbonamenti() {
-        return new Abbonamento();
+    public Abbonamenti abbonamenti() {
+        return new Abbonamenti();
     }
+	
 }
